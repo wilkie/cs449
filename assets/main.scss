@@ -1,0 +1,27 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+@import "base16-rouge.css";
+
+table.schedule td:first-child {
+  white-space: nowrap;
+}
+
+.question {
+  background-color: #a7e0a7;
+}
+
+.answer {
+  color: red;
+}
+
+.highlight
+pre.highlight {
+  background: white;
+}
+
+pre code {
+  background: white;
+}
