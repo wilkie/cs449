@@ -60,7 +60,7 @@ Specific instructions for each exam will be posted at a closer date.
 
 Lab work in this course is the main application of your knowledge.
 These are substantial assignments that generally test core knowledge.
-Each lab will be assigned on the Lab page and will generally have at least two weeks time to complete.
+Each lab will be assigned on the Lab page and will generally have at least one to two weeks time to complete.
 
 Unless otherwise noted, lab assignments will be submitted electronically through the Gradescope system.
 Specific further rules or obligations will be described on each lab.
