@@ -34,4 +34,4 @@ TBD
 
 **Location**: 5413 Sennott Square
 
-**Other**: By appointment. <mailto:dwilk@cs.pitt.edu>
+**Other**: By appointment. <mailto:dwilk@cs.pitt.edu> Please place "CS449" in the subject line.

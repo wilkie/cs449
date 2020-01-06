@@ -16,6 +16,14 @@ permalink: /about/
 
 You **must** attend *only* your assigned recitation.
 
+## Instructor
+
+wilkie
+
+**Office**: 5413 Sennott Square
+
+**E-Mail**: <mailto:dwilk@cs.pitt.edu> Please place "CS449" in the subject line.
+
 ## Teaching Assistants
 
 Go [here]({{ site.baseurl }}/schedule#office-hours) for office hours time and locations.
