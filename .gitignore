@@ -4,3 +4,7 @@ _site
 cs449
 docs
 .htpasswd
+examples/data-representation/abs
+examples/data-representation/AbsTest.class
+examples/data-representation/FloatTest.class
+examples/data-representation/broken_math
