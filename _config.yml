@@ -16,9 +16,11 @@
 title: CS 449
 email: dwilk@cs.pitt.edu
 description: |
-  CS 449 (26790) / COE (22632);
+  CS 449 (26790) / COE (22632) / CS 449 (26745);
   MW 3:00PM
   324 Cathedral of Learning
+  TTh 1:00PM
+  125 Frick Fine Arts
 baseurl: "/cs449" # the subpath of your site, e.g. /blog
 url: "https://wilkie.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 destination: "cs449"

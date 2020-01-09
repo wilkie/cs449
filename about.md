@@ -8,11 +8,16 @@ permalink: /about/
 * **Time**: 3:00PM - 4:15PM
 * **Room**: 324 Cathedral of Learning
 
+* **Days**: Tuesday/Thursday
+* **Time**: 1:00PM - 2:15PM
+* **Room**: 125 Frick Fine Arts
+
 ## Recitations
 
-* Wednesday, 12:00 PM, 6110 Sennott Square
-* Thursday,   5:00 PM, 5505 Sennott Square
-* Friday,     5:00 PM, 5502 Sennott Square
+* Tuesday, 9:00 AM, 6110 Sennott Square
+* Tuesday, 12:00 PM, 5502 Sennott Square
+* Friday, 11:00 AM, 6110 Sennott Square
+* Friday, 3:00 PM, 6110 Sennott Square
 
 You **must** attend *only* your assigned recitation.
 
@@ -28,17 +33,29 @@ wilkie
 
 Go [here]({{ site.baseurl }}/schedule#office-hours) for office hours time and locations.
 
-### TBD
+### Gordon Lu
 
 **E-Mail**: TBD
 
 **Office**: 5806 Sennott Square (UTA office)
 
-### TBD
+### Alex Conway
 
 **E-Mail**: TBD
 
-**Office**: TBD
+**Office**: 5806 Sennott Square (UTA office)
+
+### Jon Rutkauskas
+
+**E-Mail**: TBD
+
+**Office**: 5806 Sennott Square (UTA office)
+
+### Zack Hable
+
+**E-Mail**: TBD
+
+**Office**: 5806 Sennott Square (UTA office)
 
 ## Purpose
 

@@ -11,22 +11,46 @@ Office hours for the instructor and TAs is listed at the [bottom of this page](#
 The schedule is always tentative. I may shift topics around.
 
 {:.schedule}
-| January    6/7 | Introduction / [Syllabus]({{site.baseurl}}/syllabus) / What is Systems? / Starting Data Representation |
+| January    6/9 | Introduction / [Syllabus]({{site.baseurl}}/syllabus) / What is Systems? / Starting Data Representation |
 |              | **Introduction, What is Systems?** [[pdf]({{site.baseurl}}/slides/01_CS449_Introduction.pdf)] [[pptx]({{site.baseurl}}/slides/01_CS449_Introduction.pptx)]<br>**Data Representation** [[pdf]({{site.baseurl}}/slides/02_CS449_Data-Representation.pdf)] [[pptx]({{site.baseurl}}/slides/02_CS449_Data-Representation.pptx)] |
-| January    8/9 | Data Representation |
+| January    8/14 | Data Representation |
 |              | **Bitwise and Logical Operations, Floating Point** [[pdf]({{site.baseurl}}/slides/03_CS449_Data-Representation-II.pdf)] [[pptx]({{site.baseurl}}/slides/03_CS449_Data-Representation-II.pptx)]<br>Examples: [AbsTest.java]({{site.baseurl}}/examples/data-representation/AbsTest.java) \| [abs.c]({{site.baseurl}}/examples/data-representation/abs.c) \| [FloatTest.java]({{site.baseurl}}/examples/data-representation/FloatTest.java) \| [broken_math.c]({{site.baseurl}}/examples/data-representation/broken_math.c) |
 
 ## Office Hours
 
 **Note**: Not valid during finals week!
 
-### TBD
+### Gordon Lu
 
-**Location**: TBD
+TBD
 
-### TBD
+**E-Mail**: TBD
 
-**Location**: TBD
+**Office**: 5806 Sennott Square (UTA office)
+
+### Alex Conway
+
+TBD
+
+**E-Mail**: TBD
+
+**Office**: 5806 Sennott Square (UTA office)
+
+### Jon Rutkauskas
+
+TBD
+
+**E-Mail**: TBD
+
+**Office**: 5806 Sennott Square (UTA office)
+
+### Zack Hable
+
+TBD
+
+**E-Mail**: TBD
+
+**Office**: 5806 Sennott Square (UTA office)
 
 ### Instructor
 
