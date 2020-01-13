@@ -11,8 +11,8 @@ int main(void) {
     printf("This does not happen.\n");
   }
 
-  if (w + 1> w) {
-    printf("This does happen.\n");
+  if (w + 1 > w) {
+    printf("This does not happen.\n");
   }
 
   int z = w + 1;
