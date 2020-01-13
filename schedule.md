@@ -15,6 +15,8 @@ The schedule is always tentative. I may shift topics around.
 |              | **Introduction, What is Systems?** [[pdf]({{site.baseurl}}/slides/01_CS449_Introduction.pdf)] [[pptx]({{site.baseurl}}/slides/01_CS449_Introduction.pptx)]<br>**Data Representation** [[pdf]({{site.baseurl}}/slides/02_CS449_Data-Representation.pdf)] [[pptx]({{site.baseurl}}/slides/02_CS449_Data-Representation.pptx)] |
 | January    8/14 | Data Representation |
 |              | **Bitwise and Logical Operations, Floating Point** [[pdf]({{site.baseurl}}/slides/03_CS449_Data-Representation-II.pdf)] [[pptx]({{site.baseurl}}/slides/03_CS449_Data-Representation-II.pptx)]<br>Examples: [AbsTest.java]({{site.baseurl}}/examples/data-representation/AbsTest.java) \| [abs.c]({{site.baseurl}}/examples/data-representation/abs.c) \| [FloatTest.java]({{site.baseurl}}/examples/data-representation/FloatTest.java) \| [broken_math.c]({{site.baseurl}}/examples/data-representation/broken_math.c) |
+| January    13/16 | Intro to C |
+|              | **Introduction to C** [[pdf]({{site.baseurl}}/slides/04_CS449_Introduction-to-C.pdf)] [[pptx]({{site.baseurl}}/slides/04_CS449_Introduction-to-C.pptx)] |
 
 ## Office Hours
 
@@ -59,3 +61,7 @@ TBD
 **Location**: 5413 Sennott Square
 
 **Other**: By appointment. <mailto:dwilk@cs.pitt.edu> Please place "CS449" in the subject line.
+
+<!--Tuesday: 1:00 - 3:00 Zach
+Tuesday: 11:00 - 12:00
+Thursday: -->
