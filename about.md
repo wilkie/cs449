@@ -35,25 +35,25 @@ Go [here]({{ site.baseurl }}/schedule#office-hours) for office hours time and lo
 
 ### Gordon Lu
 
-**E-Mail**: TBD
+**E-Mail**: gol6@pitt.edu
 
 **Office**: 5806 Sennott Square (UTA office)
 
 ### Alex Conway
 
-**E-Mail**: TBD
+**E-Mail**: lac216@pitt.edu
 
 **Office**: 5806 Sennott Square (UTA office)
 
 ### Jon Rutkauskas
 
-**E-Mail**: TBD
+**E-Mail**: jsr68@pitt.edu
 
 **Office**: 5806 Sennott Square (UTA office)
 
 ### Zack Hable
 
-**E-Mail**: TBD
+**E-Mail**: zack.hable@pitt.edu
 
 **Office**: 5806 Sennott Square (UTA office)
 

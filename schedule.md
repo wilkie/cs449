@@ -26,39 +26,43 @@ The schedule is always tentative. I may shift topics around.
 
 ### Gordon Lu
 
-TBD
+**Friday**: 4:00PM - 6:00PM
 
-**E-Mail**: TBD
+**E-Mail**: gol6@pitt.edu
 
 **Office**: 5806 Sennott Square (UTA office)
 
 ### Alex Conway
 
-TBD
+**Tuesday**: 10:00AM - 12:00PM
 
-**E-Mail**: TBD
+**E-Mail**: lac216@pitt.edu
 
 **Office**: 5806 Sennott Square (UTA office)
 
 ### Jon Rutkauskas
 
-TBD
+**Tuesday**: 10:00AM - 11:30AM
 
-**E-Mail**: TBD
+**Thursday**: 12:00PM - 1:30PM
+
+**E-Mail**: jsr68@pitt.edu
 
 **Office**: 5806 Sennott Square (UTA office)
 
 ### Zack Hable
 
-TBD
+**Tuesday**: 1:00PM - 3:00PM
 
-**E-Mail**: TBD
+**E-Mail**: zack.hable@pitt.edu
 
 **Office**: 5806 Sennott Square (UTA office)
 
 ### Instructor
 
-TBD
+**Wednesday**: 1:00PM - 2:30PM
+
+**Friday**: 1:00PM - 2:30PM
 
 **Location**: 5413 Sennott Square
 
