@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Data Lab | CS 449</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Data Lab" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Weight: 5% of your total 50% Lab Grade" />
+<meta property="og:description" content="Weight: 5% of your total 50% Lab Grade" />
+<link rel="canonical" href="http://0.0.0.0:4000/cs449/labs/01/" />
+<meta property="og:url" content="http://0.0.0.0:4000/cs449/labs/01/" />
+<meta property="og:site_name" content="CS 449" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-01-13T20:45:47-05:00" />
+<script type="application/ld+json">
+{"datePublished":"2020-01-13T20:45:47-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/cs449/labs/01/"},"description":"Weight: 5% of your total 50% Lab Grade","@type":"BlogPosting","url":"http://0.0.0.0:4000/cs449/labs/01/","headline":"Data Lab","dateModified":"2020-01-13T20:45:47-05:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/cs449/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/cs449/feed.xml" title="CS 449" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/cs449/">CS 449</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/cs449/about/">About</a><a class="page-link" href="/cs449/labs/">Labs</a><a class="page-link" href="/cs449/schedule/">Schedule</a><a class="page-link" href="/cs449/syllabus/">Syllabus</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        
+<h1>Data Lab: Looking at Types</h1>
+
+<p>
+<strong>Released</strong>: 12:00 AM Tuesday, January 14th, 2020.
+</p>
+
+<p>
+<strong>Due</strong>: 11:59 PM Friday, January  24th, 2020.
+</p>
+
+<p>
+This lab will help you become more comfortable and familiar with bit-level representations of integers and floating-point numbers.
+You will do this by solving a series of programming "puzzles."
+
+</p>
+
+
+<p><strong>Weight</strong>: 5% of your total 50% Lab Grade</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>The purpose of this assignment is to become more familiar with bit-level representations of integers and floating point numbers.
+You’ll do this by solving a series of programming “puzzles.”
+Many of these puzzles may seem artificial, but you’ll find yourself thinking much more about bits and encodings as you work through them.
+Also, bit manipulations are very useful in cryptography, data encoding, implementing file formats (e.g. MP3), and, although they shouldn’t be done this way imho, certain job interviews.</p>
+
+<h2 id="logistics">Logistics</h2>
+
+<p>This is an <em>individual</em> project.
+All handins are electronic via Gradescope.
+Clarifications and corrections will be given during recitation sections.
+We strongly advise you to test your code on the <code class="highlighter-rouge">thoth</code> Linux machine before submitting it and to test your submission on Gradescope.
+We will not return any points lost because you did the lab in a different environment (even if it works there) if it does not work when tested on Gradescope before the deadline.</p>
+
+<p>Remember that:</p>
+
+<ul>
+  <li>You are not allowed to search for solutions online! (Although some resources on logical equivalence might be important refreshers)</li>
+  <li>You are not allowed to ask other students for help, show them your code, or discuss the specifics of the solution.</li>
+</ul>
+
+<p><strong>Be aware that you may be asked to explain your code to a member of our course staff using only what you have submitted: your comments in the code should be such that you can determine what your code does and why a few weeks later, if needed. Write comments!!</strong></p>
+
+<h2 id="handout-instructions">Handout Instructions</h2>
+
+<p>First, log into the Linux Pitt machine and download the datalab package as follows:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget https://bit.ly/2kB0Rvq -O datalab.zip
+</code></pre></div></div>
+
+<p>This will download the <code class="highlighter-rouge">datalab.zip</code> file to your (private) directory on the <code class="highlighter-rouge">thoth</code> Linux machine (make sure you are logged into this!) in which you will do your work.
+Then issue the command:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>unzip datalab.zip
+</code></pre></div></div>
+
+<p>This will cause a number of files to be unpacked in the directory <code class="highlighter-rouge">datalab-handout</code>.
+Navigate to that directory and look at the files.
+The only file you will be modifying is <code class="highlighter-rouge">bits.c</code>.
+The <code class="highlighter-rouge">bits.c</code> file contains a skeleton for each of the programming puzzles.
+Your assignment is to complete each empty function using only the <em>straightline</em> code for the integer puzzles (i.e. no loops or conditionals) and a limited number of C arithmetic and logical operators.
+Specifically, you are <em>only</em> allowed to use the following eight operators:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>! ~ &amp; ^ | + &lt;&lt; &gt;&gt;
+</code></pre></div></div>
+
+<p>A few of the puzzles further restrict this list.
+Also, you are not allowed to use any constants longer than 8 bits.
+See the comments in <code class="highlighter-rouge">bits.c</code> for detailed rules and a discussion of the desired coding style.</p>
+
+<h2 id="the-puzzles">The Puzzles</h2>
+
+<p>This section describes the puzzles that you will be solving in <code class="highlighter-rouge">bits.c</code>.
+The following table describes a set of functions that manipulate the test sets of bits.
+The “Rating” field gives the difficulty rating (the number of points) for the puzzle.
+The “Max Ops” field gives the maximum number of operators you are allowed to use to implement each function.
+See the comments in <code class="highlighter-rouge">bits.c</code> for more details on the desired behavior of the functions.
+You may also refer to the test functions in <code class="highlighter-rouge">tests.c</code>.
+These are used as reference functions to express the correct behavior of your functions, although they do not satisfy the coding rules that constrain your own functions.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Name</strong></th>
+      <th><strong>Description</strong></th>
+      <th><strong>Rating</strong></th>
+      <th><strong>Max Ops</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">bitXor(x,y)</code></td>
+      <td>Return <code class="highlighter-rouge">x ^ y</code> using only <code class="highlighter-rouge">~</code> and <code class="highlighter-rouge">&amp;</code></td>
+      <td>1</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">tmin()</code></td>
+      <td>Return minimum two’s complement integer</td>
+      <td>1</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">allOddBits(x)</code></td>
+      <td>Return 1 if all odd-numbered bits in word set to 1</td>
+      <td>2</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">conditional(x,y,z)</code></td>
+      <td>Same as the ternary operator <code class="highlighter-rouge">x ? y : z</code> in C/Java</td>
+      <td>3</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">logicalNeg(x)</code></td>
+      <td>Implement the <code class="highlighter-rouge">!</code> operator without using <code class="highlighter-rouge">!</code></td>
+      <td>4</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">floatFloat2Int(f)</code></td>
+      <td>Return the bit-level equivalent of expression <code class="highlighter-rouge">(int)f</code> for floating point argument <code class="highlighter-rouge">f</code></td>
+      <td>4</td>
+      <td>30</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="some-clarification-on-floatfloat2int">Some clarification on <code class="highlighter-rouge">floatFloat2Int</code></h3>
+
+<p>The function <code class="highlighter-rouge">floatFloat2Int</code> implements a single-precision floating-point operation.
+The rules are greatly loosened for this puzzle.
+Here, you are allowed to use standard control-flow structures such as <code class="highlighter-rouge">if</code>, <code class="highlighter-rouge">for</code>, etc.
+You may use both <code class="highlighter-rouge">int</code> and <code class="highlighter-rouge">unsigned int</code> data types, including arbitrary unsigned and integer constants of any size.
+You may not use unions, structs, or arrays (nor would you need to.)
+Most significantly, you may not use any floating point data types, operations, or constants.</p>
+
+<p>For this function, you will implement the casting operation <code class="highlighter-rouge">(int)f</code> which converts the floating point encoding to an integer encoding.
+This essentially means decoding the floating point value according to the IEEE 754 spec to pull out the integer value (and truncating away the fractional value.)
+In our slides, the process of encoding an integer value into the 32-bit floating point representation is shown.
+You are, effectively, performing the opposite operation.</p>
+
+<p>When the value exceeds (is greater than INT_MAX) the possible integer range, you should return <code class="highlighter-rouge">0x80000000</code> which will represent an invalid integer for our purposes.
+Other values, such as NaN and Infinity of either sign should also result in <code class="highlighter-rouge">0x80000000</code>.
+Every other bit pattern will have a corresponding integer value that should be reflected in the result returned by your function.</p>
+
+<p>You can use the provided <code class="highlighter-rouge">fshow</code> application to see the IEEE 754 floating-point bit pattern reflected by the given integer value.
+For instance:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>thoth $ ./fshow 2080374784
+
+Floating point value 2.658455992e+36
+Bit Representation: 0x7c000000, sign = 0, exponent = f8, fraction = 000000
+Normalized.  1.0000000000 X 2^(121)
+</code></pre></div></div>
+
+<p>You can also give <code class="highlighter-rouge">fshow</code> hexadecimal and floating point values which it will decipher in a similar way.</p>
+
+<h2 id="evaluation">Evaluation</h2>
+
+<p>Your score will be computed out of a maximum of 15 points based on correctness.
+The puzzles you must solve have been given a difficulty rating between 1 and 4.
+We will evaluate your functions using the <code class="highlighter-rouge">btest</code> program, which is described in the next section.
+You will get full credit for a puzzle if it passes all of the tests performed by <code class="highlighter-rouge">btest</code>, and no credit otherwise.</p>
+
+<h3 id="performance-points">Performance Points</h3>
+
+<p>Our main concern at this point in the course is that you can get the right answer.
+However, we want to instill in you a sense of keeping things consise yet legible.
+Finding such a sweet spot is a skill which you will become better at as you practice.</p>
+
+<p>To that end, some of the puzzles can be accomplished by brute force or by some exhaustive logic, but we want you to be more clever.
+Thus, for each function we’ve established a maximum number of operators that you are allowed to use for each function.
+This limit is very generous and is designed only to catch the most egregiously inefficient solutions.
+You will receive <strong>two points</strong> for each correct function that satisfies the operator limit.</p>
+
+<p>This is on top of the points earned for correctness alone that are based on the rated difficulty.
+A correct and performant solution to <code class="highlighter-rouge">floatFloat2Int</code>, for instance, will earn 4 + 2 points for a total of 6.
+Therefore, the total points for the lab are the 15 for correctness added to the 12 performance points for a total out of 27 points.</p>
+
+<h3 id="auto-grading-your-work">Auto-grading your work.</h3>
+
+<p>We have included some autograding tools in the handout directory: <code class="highlighter-rouge">btest</code>, <code class="highlighter-rouge">dlc</code>, and <code class="highlighter-rouge">driver.pl</code>.</p>
+
+<p><strong>btest</strong>: This program provides unit tests that check the functional correctness of the functions in <code class="highlighter-rouge">bits.c</code>.
+To build and use it, type the following two commands:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>thoth $ make
+thoth $ ./btest
+</code></pre></div></div>
+
+<p>Notice that you must rebuild btest each time you modify your <code class="highlighter-rouge">bits.c</code> file.
+Just type the same two commands in when you make changes.</p>
+
+<p>You’ll find it useful to work through the functions one at a time and testing as you go.
+You can make use of the <code class="highlighter-rouge">-f</code> flag to instruct <code class="highlighter-rouge">btest</code> to test only a single function:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>thoth $ ./btest -f bitXor
+</code></pre></div></div>
+
+<p>You can feed it specific function arguments by using the option flags <code class="highlighter-rouge">-1</code>, <code class="highlighter-rouge">-2</code>, and <code class="highlighter-rouge">-3</code> as necessary:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>thoth $ ./btest -f bitXor -1 7 -2 0xf
+</code></pre></div></div>
+
+<p>Check the <code class="highlighter-rouge">README</code> for documentation on running the <code class="highlighter-rouge">btest</code> program.</p>
+
+<p><strong>dlc</strong>: This is a modified <strong>ANSI C</strong> (C89) compiler from the MIT CILK group that you can use to check for compliance with the coding rules for each puzzle.
+The typical usage is:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>thoth $ ./dlc bits.c
+</code></pre></div></div>
+
+<p>The program runs silently unless it detects a problem such as an illegal operator or too many operators.
+Running with the <code class="highlighter-rouge">-e</code> switch will make it noisy.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>thoth $ ./dlc -e bits.c
+</code></pre></div></div>
+
+<p>This will have <code class="highlighter-rouge">dlc</code> print counts of the number of operators used by each function.
+Type <code class="highlighter-rouge">./dlc -help</code> for a list of command-line options.</p>
+
+<p><strong>driver.pl</strong>: This final script is a Perl script that will essentially just run the other two applications and compute your overall score.
+It takes no arguments.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>thoth $ ./driver.pl
+</code></pre></div></div>
+
+<p>We will use <code class="highlighter-rouge">driver.pl</code> to evaluate your solution.</p>
+
+<h2 id="very-important-advice">Very Important Advice</h2>
+
+<ul>
+  <li>
+    <p>Just this once, do not include the <code class="highlighter-rouge">&lt;stdio.h&gt;</code> header in your <code class="highlighter-rouge">bits.c</code> file when you want to use <code class="highlighter-rouge">printf</code>.
+It confuses the <code class="highlighter-rouge">dlc</code> compiler and results in some strange errors.
+You will still be able to use <code class="highlighter-rouge">printf</code> in your <code class="highlighter-rouge">bits.c</code> file for debugging without including <code class="highlighter-rouge">&lt;stdio.h&gt;</code>.
+<code class="highlighter-rouge">gcc</code> will simply print some warnings you can ignore.</p>
+  </li>
+  <li>
+    <p>The <code class="highlighter-rouge">dlc</code> program partly enforces the C89 dialect and not the more flexible C99.
+Specifically, it enforces the rule that variable declarations must be the first statements in the block.
+For example, it will complain about the following code:</p>
+  </li>
+</ul>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">foo</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+  <span class="n">a</span> <span class="o">*=</span> <span class="mi">3</span><span class="p">;</span>      <span class="cm">/* Statement that is not a declaration */</span>
+  <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>   <span class="cm">/* ERROR: Declaration not allowed here */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>It does not seem to mind single-line comments using <code class="highlighter-rouge">//</code> however, which is nice.</p>
+
+<h2 id="submission-instructions">Submission Instructions</h2>
+
+<p>You should hand in your <code class="highlighter-rouge">bits.c</code> solution file using Gradescope. If you’re using a Shell Terminal, you can use <code class="highlighter-rouge">scp</code> to copy your file from the remote machine to your local machine as follows:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scp username@thoth.cs.pitt.edu:/path/to/remote/file /path/to/local/file
+</code></pre></div></div>
+
+<p>If you’re using Windows, you can download the WinSCP software and enter with host <code class="highlighter-rouge">thoth.cs.pitt.edu</code> and then your username and password.
+Once in, locate your <code class="highlighter-rouge">bits.c</code> file and simply drag and drop to your Windows computer file system.
+There are also free GUI clients for Linux or Mac such as FileZilla (<a href="https://filezilla-project.org/">https://filezilla-project.org/</a>).</p>
+
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/cs449/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">CS 449</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">CS 449</li><li><a class="u-email" href="mailto:dwilk@cs.pitt.edu">dwilk@cs.pitt.edu</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/wilkie"><svg class="svg-icon"><use xlink:href="/cs449/assets/minima-social-icons.svg#github"></use></svg> <span class="username">wilkie</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>CS 449 (26790) / COE (22632) / CS 449 (26745);
+MW 3:00PM
+324 Cathedral of Learning
+TTh 1:00PM
+125 Frick Fine Arts
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
