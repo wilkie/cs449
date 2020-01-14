@@ -1,0 +1,23 @@
+---
+layout: post
+title:  "Lab 1 Released!"
+date:   2020-01-13 21:04:31 +0200
+categories: labs
+---
+
+Hello, all!
+
+I have placed Lab 1 in its appropriate place and we now have the official lab section on the site.
+
+Those in the M/W section should all have access to `thoth.cs.pitt.edu` and, soon, the remaining students in the T/Th section will join us.
+
+Gradescope is not yet set up for submission of Lab 1, but will be done promptly before the official due date of this lab.
+
+Due to the staggering of lectures, the due date for this lab is very comfortable for the M/W section since it is due next Friday (see the lab sheet for the exact and official date.)
+That gives everybody at least a week to complete the assignment, which is very much more than necessary.
+
+If you have problems accessing thoth, let me know immediately. Such a problem is not an excuse for submitting late.
+
+Also note that the late penalty has been reduced to 10% per late day from 15%. The syllabus has changed to reflect that.
+
+Thank you! And have fun!
