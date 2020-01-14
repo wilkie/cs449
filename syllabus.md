@@ -102,12 +102,12 @@ Please refer to the [Title IX Office](https://www.titleix.pitt.edu/) for more po
 
 ## Late/Early Policy
 
-Students need to submit assessed assignments by the published deadline. The penalty for late assignments is 15% per day. However, each student will receive 5 late days for the course. These late days are provided to allow you to cope with most emergencies that prevent completing a lab on time, including computer problems, a cold, getting stuck at the airport, etc. The following rules will be applied for late days: 
+Students need to submit assessed assignments by the published deadline. The penalty for late assignments is 10% per day. However, each student will receive 5 late days for the course. These late days are provided to allow you to cope with most emergencies that prevent completing a lab on time, including computer problems, a cold, getting stuck at the airport, etc. The following rules will be applied for late days: 
 
 * Late days are used automatically until you run out. 
 * No more than 2 late days can be used on any one assignment.
 * If your last submission is one day late, and you have at least one remaining late day, then you will receive full credit for the lab and automatically spend one late day. For example, if an assignment is due at 11:59pm on Thursday and your last submission is noon on Friday, then you will receive full credit and spend one late day. 
-* Once you have used all your late days, or exhausted the limit for the assignment in question, then you will receive a penalty of 15% for each subsequent late day. For example, suppose you have only one late day left. If an assignment is due at 11:59pm on Thursday and your last submission is noon on Saturday, then you will spend your one remaining late day and be penalized 15%. If your last submission is noon on Sunday, then you will spend one late day and be penalized 30%.
+* Once you have used all your late days, or exhausted the limit for the assignment in question, then you will receive a penalty of 10% for each subsequent late day. For example, suppose you have only one late day left. If an assignment is due at 11:59pm on Thursday and your last submission is noon on Saturday, then you will spend your one remaining late day and be penalized 10%. If your last submission is noon on Sunday, then you will spend one late day and be penalized 30%.
 * Late submissions will not be accepted after three days after the due date. 
 
 It is worth noting that those late days to help you manage your time in the face of personal issues and to help smooth out burstiness in assignment due dates across classes. They are for when you are sick, when a short term emergency situation arises, when you have too many deadlines all at once, etc. It is strongly recommended that you conserve your late days, saving them for the more difficult assignments at the end of the term.
