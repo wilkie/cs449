@@ -34,7 +34,7 @@ The schedule is always tentative. I may shift topics around.
 
 ### Alex Conway
 
-**Tuesday**: 10:00AM - 12:00PM
+**Wednesday**: 10:00AM - 12:00PM
 
 **E-Mail**: lac216@pitt.edu
 
