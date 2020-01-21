@@ -19,7 +19,7 @@ The schedule is always tentative. I may shift topics around.
 |              | **Bitwise and Logical Operations, Floating Point** [[pdf]({{site.baseurl}}/slides/03_CS449_Data-Representation-II.pdf)] [[pptx]({{site.baseurl}}/slides/03_CS449_Data-Representation-II.pptx)]<br><br>Other Resources: <br>[What Every Programmer Should Know About Floating Point](https://floating-point-gui.de/basic/)<br>[IEEE-754 Floating Point Converter](https://www.h-schmidt.net/FloatConverter/)<br><br>Examples: [AbsTest.java]({{site.baseurl}}/examples/data-representation/AbsTest.java) \| [abs.c]({{site.baseurl}}/examples/data-representation/abs.c) \| [FloatTest.java]({{site.baseurl}}/examples/data-representation/FloatTest.java) \| [broken_math.c]({{site.baseurl}}/examples/data-representation/broken_math.c) |
 | M January    13 /<br> Th January 16 | Floating Point / Start Intro to C |
 |              | |
-| W January    15 /<br> Th January 21 | Introduction to C |
+| W January    15 /<br> T January 21 | Introduction to C |
 |              | **Introduction to C** [[pdf]({{site.baseurl}}/slides/04_CS449_Introduction-to-C.pdf)] [[pptx]({{site.baseurl}}/slides/04_CS449_Introduction-to-C.pptx)] |
 | M January    20 | **No Class: Holiday** |
 | W January    22 /<br> Th January 23 | Introduction to Memory |
