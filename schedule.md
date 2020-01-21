@@ -17,8 +17,15 @@ The schedule is always tentative. I may shift topics around.
 |              | **Introduction, What is Systems?** [[pdf]({{site.baseurl}}/slides/01_CS449_Introduction.pdf)] [[pptx]({{site.baseurl}}/slides/01_CS449_Introduction.pptx)]<br>**Data Representation** [[pdf]({{site.baseurl}}/slides/02_CS449_Data-Representation.pdf)] [[pptx]({{site.baseurl}}/slides/02_CS449_Data-Representation.pptx)] |
 | W January    8 /<br> T January 14 | Data Representation |
 |              | **Bitwise and Logical Operations, Floating Point** [[pdf]({{site.baseurl}}/slides/03_CS449_Data-Representation-II.pdf)] [[pptx]({{site.baseurl}}/slides/03_CS449_Data-Representation-II.pptx)]<br><br>Other Resources: <br>[What Every Programmer Should Know About Floating Point](https://floating-point-gui.de/basic/)<br>[IEEE-754 Floating Point Converter](https://www.h-schmidt.net/FloatConverter/)<br><br>Examples: [AbsTest.java]({{site.baseurl}}/examples/data-representation/AbsTest.java) \| [abs.c]({{site.baseurl}}/examples/data-representation/abs.c) \| [FloatTest.java]({{site.baseurl}}/examples/data-representation/FloatTest.java) \| [broken_math.c]({{site.baseurl}}/examples/data-representation/broken_math.c) |
-| M January    13 /<br> Th January 16 | Intro to C |
+| M January    13 /<br> Th January 16 | Floating Point / Start Intro to C |
+|              | |
+| W January    15 /<br> Th January 21 | Introduction to C |
 |              | **Introduction to C** [[pdf]({{site.baseurl}}/slides/04_CS449_Introduction-to-C.pdf)] [[pptx]({{site.baseurl}}/slides/04_CS449_Introduction-to-C.pptx)] |
+| M January    20 | **No Class: Holiday** |
+| W January    22 /<br> Th January 23 | Introduction to Memory |
+|              | **Introduction to Memory, Pointers, Arrays, Strings** [[pdf]({{site.baseurl}}/slides/05_CS449_Introduction-to-Memory.pdf)] [[pptx]({{site.baseurl}}/slides/05_CS449_Introduction-to-Memory.pptx)] |
+| Th April 23  | **8AM FINAL CL324** for Monday/Wednesday Section (CS 26790) |
+| Sa April 25  | **8AM FINAL FK125** for Tuesday/Thursday Section (CS 26745) |
 
 ## Office Hours
 
@@ -54,6 +61,8 @@ The schedule is always tentative. I may shift topics around.
 
 **Tuesday**: 1:00PM - 3:00PM
 
+**Friday**: 11:00AM - 12:00PM
+
 **E-Mail**: zack.hable@pitt.edu
 
 **Office**: 5806 Sennott Square (UTA office)
@@ -67,7 +76,3 @@ The schedule is always tentative. I may shift topics around.
 **Location**: 5413 Sennott Square
 
 **Other**: By appointment. <mailto:dwilk@cs.pitt.edu> Please place "CS449" in the subject line.
-
-<!--Tuesday: 1:00 - 3:00 Zach
-Tuesday: 11:00 - 12:00
-Thursday: -->
