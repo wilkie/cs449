@@ -71,7 +71,7 @@ The schedule is always tentative. I may shift topics around.
 
 **Wednesday**: 1:00PM - 2:30PM
 
-**Friday**: 1:00PM - 2:30PM
+**Friday**: 1:00PM - 2:00PM
 
 **Location**: 5413 Sennott Square
 
