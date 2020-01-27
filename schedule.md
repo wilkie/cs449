@@ -24,6 +24,8 @@ The schedule is always tentative. I may shift topics around.
 | M January    20 | **No Class: Holiday** |
 | W January    22 /<br> Th January 23 | Introduction to Memory |
 |              | **Introduction to Memory, Pointers, Arrays, Strings** [[pdf]({{site.baseurl}}/slides/05_CS449_Introduction-to-Memory.pdf)] [[pptx]({{site.baseurl}}/slides/05_CS449_Introduction-to-Memory.pptx)] |
+| M January    27 /<br> T January 28 | Introduction to Memory II |
+|              | Continuing to look at arrays, strings, and dynamic structures. Possibly look at a C Case Study. |
 | Th April 23  | **8AM FINAL CL324** for Monday/Wednesday Section (CS 26790) |
 | Sa April 25  | **8AM FINAL FK125** for Tuesday/Thursday Section (CS 26745) |
 
@@ -42,6 +44,8 @@ The schedule is always tentative. I may shift topics around.
 ### Alex Conway
 
 **Wednesday**: 10:00AM - 12:00PM
+
+**Friday**: 12:00PM - 1:00PM
 
 **E-Mail**: lac216@pitt.edu
 
