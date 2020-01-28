@@ -26,6 +26,8 @@ The schedule is always tentative. I may shift topics around.
 |              | **Introduction to Memory, Pointers, Arrays, Strings** [[pdf]({{site.baseurl}}/slides/05_CS449_Introduction-to-Memory.pdf)] [[pptx]({{site.baseurl}}/slides/05_CS449_Introduction-to-Memory.pptx)] |
 | M January    27 /<br> T January 28 | Introduction to Memory II |
 |              | Continuing to look at arrays, strings, and dynamic structures. Possibly look at a C Case Study. |
+| W January    29 /<br> T January 28 | Introduction to Memory II |
+|              | Continuing to look at arrays, strings, and dynamic structures. Possibly look at a C Case Study. |
 | Th April 23  | **8AM FINAL CL324** for Monday/Wednesday Section (CS 26790) |
 | Sa April 25  | **8AM FINAL FK125** for Tuesday/Thursday Section (CS 26745) |
 
