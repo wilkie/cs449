@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Pointer Lab | CS 449</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Pointer Lab" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Weight: 5% of your total 50% Lab Grade" />
+<meta property="og:description" content="Weight: 5% of your total 50% Lab Grade" />
+<link rel="canonical" href="https://wilkie.github.io/cs449/labs/02/" />
+<meta property="og:url" content="https://wilkie.github.io/cs449/labs/02/" />
+<meta property="og:site_name" content="CS 449" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-01-28T00:09:49-05:00" />
+<script type="application/ld+json">
+{"datePublished":"2020-01-28T00:09:49-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://wilkie.github.io/cs449/labs/02/"},"description":"Weight: 5% of your total 50% Lab Grade","@type":"BlogPosting","url":"https://wilkie.github.io/cs449/labs/02/","headline":"Pointer Lab","dateModified":"2020-01-28T00:09:49-05:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/cs449/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://wilkie.github.io/cs449/feed.xml" title="CS 449" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/cs449/">CS 449</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/cs449/about/">About</a><a class="page-link" href="/cs449/labs/">Labs</a><a class="page-link" href="/cs449/resources/">Resources</a><a class="page-link" href="/cs449/schedule/">Schedule</a><a class="page-link" href="/cs449/syllabus/">Syllabus</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        
+<h1>Pointer Lab: Looking at Pointers!</h1>
+
+<p>
+<strong>Released</strong>: 12:00 AM Tuesday, January 27th, 2020.
+</p>
+
+<p>
+<strong>Due</strong>: 11:59 PM Friday, February 7th, 2020.
+</p>
+
+<p>
+Here, we will investigate the nature of pointers.
+They aren't here to hurt us. They are here to help us!
+
+</p>
+
+
+<p><strong>Weight</strong>: 5% of your total 50% Lab Grade</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>This lab will give you practice with pointers and pointer arithmetic.
+Pointers are a critical part of the C language.
+C gets out of your way and lets you mess with memory rather freely.
+Therefore, learning to use pointers and their nuances will aid you in exploring the memory layout of a system and how memory allocation works in the future.</p>
+
+<p>The assignment contains a skeleton for some brand new programming puzzles!
+Each puzzle is a relatively empty function that has a comment block preceding it describing exactly what the function must do and what restrictions exist on your potential implementation.</p>
+
+<p>Your task, should you choose to accept it (please do) is to complete each function.</p>
+
+<h2 id="rules">Rules</h2>
+
+<p>Generally, each puzzle has some generic rules which can be relaxed if mentioned by the comment block.
+However, the following rules will apply to all:</p>
+
+<ul>
+  <li>Only straight-line code (i.e., no loops or conditionals) unless otherwise stated.</li>
+  <li>A limited number of C arithmetic and logical operators.</li>
+  <li>No constants larger than a byte (8 bits) are allowed.</li>
+  <li>Free free to liberally use <code class="highlighter-rouge">(</code> and <code class="highlighter-rouge">)</code> and <code class="highlighter-rouge">=</code> (assignment) as much as you want!</li>
+  <li><strong><em>You are permitted to use casts for these functions!</em></strong></li>
+</ul>
+
+<p>You will start working with basic pointers and use them to compute the size of different data items in memory,
+modify the contents of an array, and complete a couple of pointer “<em>puzzles</em>” that deal with alignment and array addressing.</p>
+
+<h2 id="downloading">Downloading</h2>
+
+<p>Your lab materials are contained in an archive file called <code class="highlighter-rouge">pointerlab.zip</code>, which you can download to your Linux machine as follows:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget https://wilkie.github.io/cs449/labs/02/pointerlab.zip
+</code></pre></div></div>
+
+<p>This will download the <code class="highlighter-rouge">pointerlab.zip</code> file to your (private) directory on the <code class="highlighter-rouge">thoth</code> Linux machine (make sure you are logged into this!) in which you will do your work.
+Then issue the command:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>unzip pointerlab.zip
+</code></pre></div></div>
+
+<p>This will cause a number of files to be unpacked in the directory <code class="highlighter-rouge">pointerlab-handout</code>.
+Navigate to that directory and look at the files.
+The only file you will be modifying is <code class="highlighter-rouge">pointer.c</code>.
+The <code class="highlighter-rouge">pointer.c</code> file contains a skeleton for each of the programming puzzles.</p>
+
+<h2 id="what-are-these">What are these??</h2>
+
+<p>So, you will be updating the <code class="highlighter-rouge">pointer.c</code> file to perform the following tasks:</p>
+
+<ul>
+  <li>
+    <p><strong>Pointer Arithmetic</strong>: The first few functions of the file will ask you to compute the size (how much memory a single variable takes up, in bytes) of various data elements (int, double, and pointers in general.)
+You will accomplish this by noting that arrays of these data elements allocate contiguous space in memory.
+Notice the array provided and the two pointers.
+You may assign the pointers to the addresses of items in the array and then compare them.
+You may also find it easier to cast the addresses (pointers) to integer types, such as <code class="highlighter-rouge">long</code>.
+Make note of pointer arithmetic!</p>
+  </li>
+  <li>
+    <p><strong>Manipulating Data Using Pointers</strong>: The next two functions in <code class="highlighter-rouge">pointer.c</code> will investigate how manipulation of data passed in to functions through pointers affects those values.
+In <code class="highlighter-rouge">swapInts</code>, you will just copy the value addressed by the initial pointer into the memory addressed by the other, and vice versa.
+The <code class="highlighter-rouge">changeValue</code> function will update an element of an array using only the pointer to that array.
+That is, <em>you</em> are doing the work that the <code class="highlighter-rouge">[]</code> syntax we saw in lecture would be doing, which explores the finer points of pointer arithmetic. (no pun intended. ok fine, some pun intended.)</p>
+  </li>
+  <li>
+    <p><strong>Pointers and Address Ranges</strong>: It is often useful to know if a pointer falls within a particular range.
+In the next function, <code class="highlighter-rouge">withinBlock</code>, we will do exactly this.<br /><br />
+In <code class="highlighter-rouge">withinBlock</code>, you will determine if the addresses stored by the two pointers being passed in lie <strong>within the same block</strong> of 64-byte aligned memory.
+That is, if you divided up memory into nice clean 64-byte pieces, would both pointers be pointing to the same slice?
+Return a <code class="highlighter-rouge">1</code> if so, and a <code class="highlighter-rouge">0</code> otherwise.<br /><br />
+Note that when we say <em>aligned</em>, here, we mean that the first such block is at address 0, and every subsequent block is at an address that is a multiple of 64 bytes.<br /><br />
+<strong>Hint</strong>: consider what is true about the address of the first byte of one such block and every other block of that block. Now compare with the first byte from the next block.<br /><br />
+Here are some examples of <code class="highlighter-rouge">withinBlock</code>:</p>
+  </li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ptr1: 0x0
+ptr2: 0x3F
+return: 1
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ptr1: 0x0
+ptr2: 0x40
+return: 0
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ptr1: 0x3F
+ptr2: 0x40
+return: 0
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ptr1: 0x3CE
+ptr2: 0x3EF
+return: 1
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ptr1: 0x3CE
+ptr2: 0x404
+return: 0
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p><strong>String Traveral</strong>: The next function, <code class="highlighter-rouge">stringLength</code> asks us to implement our own little <code class="highlighter-rouge">strlen</code> function.
+This means we go through the given string looking for that trusty null terminal (sentinel) value, which is a byte with the value of 0. (or a <code class="highlighter-rouge">'\0'</code> character literal)
+Recall that in C, strings do not store their length, so we are always beholden to functions like this.
+After you implement yours, notice how easy it would be to, as I like to say, Kool-Aid Man through memory if the sentinel isn’t there!!
+(The Kool-Aid Man is owned by some large corporation. All rights reserved. I guess. Don’t sue me!)<br /><br />
+The next function, <code class="highlighter-rouge">stringAppend</code> asks us to implement our own little <code class="highlighter-rouge">strcat</code> function.
+This means the function is given two strings.
+It will take the second string and copy it to the end of the first.
+Once again, we will be concerned about making good use of our sentinel values.<br /><br />
+<strong>Hint</strong>: It may be useful to use one of these functions within the other to make our lives easier!</p>
+  </li>
+  <li>
+    <p><strong>Selection Sort</strong>: Putting all of our new knowledge together (and re-using one of the functions we built earlier,) we will implement one of the most basic sorting algorithms: selection sort.
+This sort works by gradually building a sorted array while scanning said array.
+Basically, we find the smallest value and move it to the front, then sort the remaining list. Find the second smallest, etc, and so on.
+Slowly, the array becomes sorted as we move across.
+Half-way through the algorithm, the first half of the list is sorted properly, and the second half is not!</p>
+  </li>
+</ul>
+
+<p>Essentially, you are writing the proper C code for the following pseudo-code (given an array <code class="highlighter-rouge">arr</code> and length <code class="highlighter-rouge">n</code>):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for i = 0 to n - 1
+  minIndex = i
+  for j = i + 1 to n
+    if arr[j] &lt; arr[minIndex] 
+      minIndex = j
+    end if
+  end for
+
+  swap(arr[i], arr[minIndex])
+end for
+</code></pre></div></div>
+
+<p>You <strong>definitely</strong> are allowed to use loops, ifs, and such on this one.
+And, <strong>hint hint</strong>, I think <code class="highlighter-rouge">swapInts</code> will be very useful, once you have implemented it.</p>
+
+<h2 id="testing">Testing</h2>
+
+<p>We have included the following tools to help you check the correctness of your work automatically:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">ptest.c</code> is a test harness for <code class="highlighter-rouge">pointer.c</code> and you can test your solutions like this:</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>thoth $ make
+thoth $ ./btest
+</code></pre></div></div>
+
+<ul>
+  <li><code class="highlighter-rouge">dlc.py</code> is a Python script that will check for compliance with the coding rules. The usage is:</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>thoth $ python dlc.py
+</code></pre></div></div>
+
+<p>This will run silently unless it detects a problem, such as an illegal operator, constants usage, or non-straightline code (loops, ifs) in the <code class="highlighter-rouge">pointer.c</code> code.
+Although, I believe it will print out an empty list such as <code class="highlighter-rouge">[]</code> if it encountered no problem.</p>
+
+<p>Just like in the prior lab, the <code class="highlighter-rouge">dlc.py</code> script enforces a slightly stricter form of C than the normal compiler, <code class="highlighter-rouge">gcc</code>.
+In particular, in a block (enclosed in curly braces) all your variable declarations must appear before any other type of statement (basically a C89 pedantic style).
+For example, it will complain about the following:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">foo</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+  <span class="n">a</span> <span class="o">*=</span> <span class="mi">3</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span> <span class="cm">/* ERROR: Declaration not allowed here. */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Instead you must declare your variables first, like so:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">foo</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">b</span><span class="p">;</span>
+  <span class="n">a</span> <span class="o">*=</span> <span class="mi">3</span><span class="p">;</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">dlc.py</code> script also does not like the non-standard binary constant notation such as <code class="highlighter-rouge">0b10011010</code> so you will have to avoid this and use hex instead.</p>
+
+<h2 id="submission">Submission</h2>
+
+<p>You should hand in your <code class="highlighter-rouge">pointer.c</code> solution file using <a href="https://gradescope.com">Gradescope</a>.
+It may be a couple of days until the assignment is in Gradescope, so if you finish very quickly, just wait a couple of days and check again.
+If you’re using a Shell Terminal, you can use <code class="highlighter-rouge">scp</code> to copy your file from the remote machine to your local machine as follows:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scp username@thoth.cs.pitt.edu:/path/to/remote/file /path/to/local/file
+</code></pre></div></div>
+
+<p>If you’re using Windows, you can download the WinSCP software and enter with host <code class="highlighter-rouge">thoth.cs.pitt.edu</code> and then your username and password.
+Once in, locate your <code class="highlighter-rouge">pointer.c</code> file and simply drag and drop to your Windows computer file system.
+There are also free GUI clients for Linux or Mac such as FileZilla (<a href="https://filezilla-project.org/">https://filezilla-project.org/</a>).</p>
+
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/cs449/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">CS 449</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">CS 449</li><li><a class="u-email" href="mailto:dwilk@cs.pitt.edu">dwilk@cs.pitt.edu</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/wilkie"><svg class="svg-icon"><use xlink:href="/cs449/assets/minima-social-icons.svg#github"></use></svg> <span class="username">wilkie</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>CS 449 (26790) / COE (22632) / CS 449 (26745);
+MW 3:00PM
+324 Cathedral of Learning
+TTh 1:00PM
+125 Frick Fine Arts
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
