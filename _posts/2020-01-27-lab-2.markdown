@@ -1,0 +1,25 @@
+---
+layout: post
+title:  "Lab 2 Released!"
+date:   2020-01-27 21:04:31 +0200
+categories: labs
+---
+
+Hello, all!
+
+I have placed Lab 2 in its proper place. Please look over it as soon as you can!
+
+This is also due in a little less than two weeks, which should be more than enough time.
+Please start early to give yourself room the fully explore some of the more interesting questions.
+
+These are also slightly puzzle oriented, but I have targetted the difficulty, I hope, a little better.
+You will be implemented a couple of standard library functions, which are obviously very real-world things,
+and also a classical sorting algorithm.
+
+Hopefully this will let you see some of the more interesting benefits (and some drawbacks) of pointers in C!
+
+I will try to have the Gradescope submission open in a couple of days. I am new to Gradescope and find it overwhelming right now and I want to be more confident that it is working. It is what it is. If you finish very early, and it is not available, just check the next day.
+
+I appreciate your patience.
+
+Thank you! And have fun!
