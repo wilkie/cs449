@@ -37,7 +37,7 @@ The schedule is always tentative. I may shift topics around.
 
 ### Gordon Lu
 
-**Friday**: 4:00PM - 6:00PM
+**Friday**: 2:00PM - 3:00PM, 4:00PM - 6:00PM
 
 **E-Mail**: gol6@pitt.edu
 
