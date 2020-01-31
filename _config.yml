@@ -37,6 +37,9 @@ plugins:
   - jekyll-feed
 
 collections:
+  homework:
+    output: true
+    permalink: /:collection/:path/
   labs:
     output: true
     permalink: /:collection/:path/
