@@ -28,6 +28,10 @@ The schedule is always tentative. I may shift topics around.
 |              | Continuing to look at arrays, strings, and dynamic structures. |
 | W January    29 /<br> Th January 30 | Studying Real-World C |
 |              | We already know around 90% of the C language. With this knowledge, we will take a casual look at one of the most studied C codebases in the world. This includes its conventions, style, and bugs.<br><br>Content Warning: Some cartoony violence and pixelated satanic imagery are very very briefly visible.<br><br>**DOOM: A Case Study** [[pdf]({{site.baseurl}}/slides/055_CS449_DOOM-A-Case-Study.pdf)] [[pptx]({{site.baseurl}}/slides/055_CS449_DOOM-A-Case-Study.pptx)] |
+| M February   3 /<br> T February 4 | Memory Management: Overview |
+|              | Looking at the problems in solving memory allocation. And linked lists.<br><br>**Allocations, Linked Lists, malloc** [[pdf]({{site.baseurl}}/slides/06_CS449_Memory-Management.pdf)] [[pptx]({{site.baseurl}}/slides/06_CS449_Memory-Management.pptx)] |
+| W February   5 /<br> Th February 6 | Memory Management: The Gritty Reality |
+|              | Looking at how malloc and free can be implemented. |
 | Th April 23  | **8AM FINAL CL324** for Monday/Wednesday Section (CS 26790) |
 | Sa April 25  | **8AM FINAL FK125** for Tuesday/Thursday Section (CS 26745) |
 
