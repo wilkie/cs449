@@ -15,7 +15,7 @@ Go [here]({{ site.baseurl}}/schedule) for the day to day schedule and lecture ma
 ## Grades
 
 * **50%** Labs
-* **5%**  Homework
+* **5%**  Homework (Around one a week, lowest two dropped. (I think it will be at least 12 homeworks))
 * **20%** Midterm
 * **25%** Final (cumulative)
 
