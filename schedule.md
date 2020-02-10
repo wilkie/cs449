@@ -22,6 +22,7 @@ The schedule is always tentative. I may shift topics around.
 | W January    15 /<br> T January 21 | Introduction to C |
 |              | **Introduction to C** [[pdf]({{site.baseurl}}/slides/04_CS449_Introduction-to-C.pdf)] [[pptx]({{site.baseurl}}/slides/04_CS449_Introduction-to-C.pptx)] |
 | M January    20 | **No Class: Holiday** |
+| | |
 | W January    22 /<br> Th January 23 | Introduction to Memory |
 |              | **Introduction to Memory, Pointers, Arrays, Strings** [[pdf]({{site.baseurl}}/slides/05_CS449_Introduction-to-Memory.pdf)] [[pptx]({{site.baseurl}}/slides/05_CS449_Introduction-to-Memory.pptx)] |
 | M January    27 /<br> T January 28 | Introduction to Memory II |
