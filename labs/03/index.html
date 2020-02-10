@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Queue Lab | CS 449</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Queue Lab" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Weight: 10% of your total 50% Lab Grade" />
+<meta property="og:description" content="Weight: 10% of your total 50% Lab Grade" />
+<link rel="canonical" href="https://wilkie.github.io/cs449/labs/03/" />
+<meta property="og:url" content="https://wilkie.github.io/cs449/labs/03/" />
+<meta property="og:site_name" content="CS 449" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-02-09T14:04:31-05:00" />
+<script type="application/ld+json">
+{"datePublished":"2020-02-09T14:04:31-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://wilkie.github.io/cs449/labs/03/"},"description":"Weight: 10% of your total 50% Lab Grade","@type":"BlogPosting","url":"https://wilkie.github.io/cs449/labs/03/","headline":"Queue Lab","dateModified":"2020-02-09T14:04:31-05:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/cs449/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://wilkie.github.io/cs449/feed.xml" title="CS 449" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/cs449/">CS 449</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/cs449/about/">About</a><a class="page-link" href="/cs449/homework/">Homework</a><a class="page-link" href="/cs449/labs/">Labs</a><a class="page-link" href="/cs449/resources/">Resources</a><a class="page-link" href="/cs449/schedule/">Schedule</a><a class="page-link" href="/cs449/syllabus/">Syllabus</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        
+<h1>Queue Lab: Data Structures</h1>
+
+<p>
+<strong>Released</strong>: 12:00 AM Monday, February 10th, 2020.
+</p>
+
+<p>
+<strong>Due</strong>: 11:59 PM Friday, February 21st, 2020.
+</p>
+
+<p>
+Here, we will use our expertise of pointers to implement
+a simple linked list data structure.
+
+</p>
+
+
+<p><strong>Weight</strong>: 10% of your total 50% Lab Grade</p>
+
+<p><strong>Note</strong>: Start early enough to get through the more troublesome parts of debugging this one!</p>
+
+<p><strong>Note</strong>: You must use <code class="highlighter-rouge">malloc</code> and not use <code class="highlighter-rouge">calloc</code> nor <code class="highlighter-rouge">realloc</code> in this assignment!</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>This assignment will give you practice in the finer aspects of C programming necessary to
+succeed in later assignments in this course. These skills include:</p>
+
+<ul>
+  <li>Explicit memory management (which C requires.)</li>
+  <li>Creating and manipulating data structures using pointers.</li>
+  <li>Working with strings.</li>
+  <li>Choosing an implementation of a data structure that has particular performance characteristics.</li>
+  <li>Properly handling error cases (such as when <code class="highlighter-rouge">malloc</code> returns <code class="highlighter-rouge">NULL</code>.)</li>
+</ul>
+
+<p>To do this, we will implement a queue data structure. Such a data structure, as you should
+recall, supports fast insert and remove operations. In this case, we will implement the queue
+such that it provides both fast last-in-first-out (LIFO) and first-in-first-out (FIFO) capability.</p>
+
+<p>As you might presume, to do this we will implement the queue using a singly linked list specifically
+implemented to make the queue operations efficient when we can.</p>
+
+<h2 id="resources">Resources</h2>
+
+<p>Beyond the lecture material, which should help greatly, you may consult several online and offline
+resources.</p>
+
+<ol>
+  <li>
+    <p><em>C Programming</em> - <strong>The C Programming Language</strong> (second edition) by Kernighan and Ritchie,
+which is a very recommended book. You may find copies
+on reserve in many libraries on campus. Chapters 5 and 6 are particularly relevant in the newest
+edition. A good online book is also <a href="https://en.wikibooks.org/wiki/C_Programming">C Programming</a> by
+the editors of wikibooks.</p>
+  </li>
+  <li>
+    <p><em>Linked Lists</em> - If you want alternative resources to my own lecture material, hunt down any
+current data structures course and review their notes there. For instance, the linked list slides
+by my friend <a href="http://people.cs.pitt.edu/~lipschultz/cs445/notes07.html">Michael Lipschultz</a>.</p>
+  </li>
+  <li>
+    <p><em>Asymptotic (big-Oh) notation</em> - If you still need a refresher on what <code class="highlighter-rouge">O(n)</code> means, Vinicius
+recommends these <a href="https://www.cs.cornell.edu/courses/cs3110/2012sp/lectures/lec19-asymp/review.html">Cornell lecture notes</a>
+on the subject. It is indeed a great summation of the topic, albeit dense at the same time.</p>
+  </li>
+  <li>
+    <p><em>C Reference</em> - Searching the internet for function names will get you a long way.
+Often it will point you to <a href="https://en.cppreference.com/w/c">cppreference.com</a>, which is a classic
+online manual for different functions.</p>
+  </li>
+</ol>
+
+<p>Namely, you will want to refer to the specifics of the functions <code class="highlighter-rouge">malloc</code> and <code class="highlighter-rouge">free</code>. You are not
+permitted to use <code class="highlighter-rouge">calloc</code> or any alternative memory allocation function.</p>
+
+<p>Also, be sure to review the behavior of string functions <code class="highlighter-rouge">strlen</code>, <code class="highlighter-rouge">strcpy</code>, and <code class="highlighter-rouge">strncpy</code>. This
+<a href="https://en.cppreference.com/w/c/string/byte">string guide</a> lists each string function and a
+short description.</p>
+
+<p><strong>Hint</strong>: <code class="highlighter-rouge">strncpy</code> has strange behavior when truncating strings! It does not necessarily add a
+<code class="highlighter-rouge">NULL</code> terminator.</p>
+
+<p><strong>Note</strong>: Academic integrity means you cannot refer to any C linked-list implementation. If you
+submit a solution that resembles such an online example, you are likely in breach of that rule
+and may be subject to penalty.</p>
+
+<h2 id="downloading">Downloading</h2>
+
+<p>To get the boilerplate code and the testing harness for this assignment, use the following
+command on thoth:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget https://wilkie.github.io/cs449/labs/03/queuelab-handout.zip
+</code></pre></div></div>
+
+<p>This will download the <code class="highlighter-rouge">queuelab-handout.zip</code> file to your (private) directory on the <code class="highlighter-rouge">thoth</code> Linux machine (make sure you are logged into this!) in which you will do your work.</p>
+
+<p>Then issue the command:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>unzip queuelab-handout.zip
+</code></pre></div></div>
+
+<p>This will cause a number of files to be unpacked in the directory <code class="highlighter-rouge">queuelab-handout</code>.
+Navigate to that directory and look at the files.
+The files you will be modifying are <code class="highlighter-rouge">queue.c</code> and <code class="highlighter-rouge">queue.h</code>.
+The <code class="highlighter-rouge">queue.c</code> file contains a skeleton for the functions that interact with your queue data structure.
+The <code class="highlighter-rouge">queue.h</code> file contains the function prototypes and the definition of the data structure.</p>
+
+<p>Consult the <code class="highlighter-rouge">README</code> file for a more thorough description of the files and how to use them.</p>
+
+<h2 id="implementation">Implementation</h2>
+
+<p>The <code class="highlighter-rouge">queue.h</code> file contains declarations which define the following structures:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* Linked list element */</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">ELE</span> <span class="p">{</span>
+    <span class="kt">char</span><span class="o">*</span> <span class="n">value</span><span class="p">;</span>       <span class="cm">/* The data held in our queue */</span>
+    <span class="k">struct</span> <span class="n">ELE</span><span class="o">*</span> <span class="n">next</span><span class="p">;</span>  <span class="cm">/* Next element in the list */</span>
+<span class="p">}</span> <span class="n">list_ele_t</span><span class="p">;</span>
+
+<span class="cm">/* Queue structure */</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">list_ele_t</span><span class="o">*</span> <span class="n">head</span><span class="p">;</span>  <span class="cm">/* Linked list of elements */</span>
+<span class="p">}</span> <span class="n">queue_t</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>These two are combined to implement a queue of strings, as illustrated in the figure below.
+The top-level representation of a queue is a structure of type <code class="highlighter-rouge">queue_t</code>.
+In the starter code, this structure contains only a single field <code class="highlighter-rouge">head</code>, but you will likely
+want to add other fields.
+The queue contents are represented as a singly-linked list, with each element represented by
+the <code class="highlighter-rouge">list_ele_t</code> structure having fields <code class="highlighter-rouge">value</code> and <code class="highlighter-rouge">next</code>.
+The <code class="highlighter-rouge">value</code> field stores a pointer to a string.
+The <code class="highlighter-rouge">next</code> field storing the pointer to another <code class="highlighter-rouge">list_ele_t</code> element representing the next
+item in the list, or <code class="highlighter-rouge">NULL</code> when representing the end of the list.
+You may add fields to the <code class="highlighter-rouge">list_ele_t</code> structure, but there is not a need to do so to complete
+this lab for full credit.</p>
+
+<p><img src="/cs449/labs/03/queuelab_fig1.png" alt="The queue structure showing a queue with a head field pointing to several list nodes. Each node has a string pointer with some random string value. The final node, labelled tail, is pointing to NULL." /></p>
+
+<p>Recall that a string is represented in C as an array of <code class="highlighter-rouge">char</code> values.
+In essentially every modern machine, a <code class="highlighter-rouge">char</code> is represented as a single byte.
+To store a string of length <code class="highlighter-rouge">l</code> the array must be at least <code class="highlighter-rouge">l + 1</code> in size.
+The first <code class="highlighter-rouge">l</code> elements storing the data of the string itself and the final element
+storing the null-terminator (a byte with the explicit value of 0.)</p>
+
+<p>The <code class="highlighter-rouge">value</code> field of the <code class="highlighter-rouge">list_ele_t</code> is a pointer to such an array. The figure
+above shows the strings <code class="highlighter-rouge">cab</code>, <code class="highlighter-rouge">bead</code>, and <code class="highlighter-rouge">cab</code> represented as separate arrays.
+The values for each character come from the <a href="http://www.asciitable.com/">ASCII encoding</a>
+where letters a through e are represented as hexadecimal values <code class="highlighter-rouge">0x61</code> through <code class="highlighter-rouge">0x65</code>.
+Each list element should have its own unique copy of each string.</p>
+
+<p>In our C code, a queue is a pointer of type <code class="highlighter-rouge">queue_t*</code>.
+We distinguish two special cases.</p>
+
+<ul>
+  <li>A <code class="highlighter-rouge">NULL</code> queue is one where the pointer has a value of <code class="highlighter-rouge">NULL</code>.</li>
+  <li>An empty queue is one where the queue pointer itself is valid, but the <code class="highlighter-rouge">head</code> field points to <code class="highlighter-rouge">NULL</code>.</li>
+</ul>
+
+<p>Your code must deal with being passed a queue of either of these types along with, of course,
+a valid queue with one or more items.</p>
+
+<h2 id="your-turn">Your turn</h2>
+
+<p>Your task is to modify both the <code class="highlighter-rouge">queue.c</code> and <code class="highlighter-rouge">queue.h</code> files to fully implement the following functions:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">q_new</code> - Create a new, empty queue.</li>
+  <li><code class="highlighter-rouge">q_free</code> - Deallocate everything associated with the given queue.</li>
+  <li><code class="highlighter-rouge">q_insert_head</code> - Attempt to add a new node to the beginning of the queue. (LIFO)</li>
+  <li><code class="highlighter-rouge">q_insert_tail</code> - Attempt to add a new node to the end of the queue in <code class="highlighter-rouge">O(1)</code> time. (FIFO)</li>
+  <li><code class="highlighter-rouge">q_remove_head</code> - Removes the head (first node) in the queue.</li>
+  <li><code class="highlighter-rouge">q_size</code> - Returns the number of items currently in the queue in <code class="highlighter-rouge">O(1)</code> time.</li>
+  <li><code class="highlighter-rouge">q_reverse</code> - Reverse the contents of the queue in place. That is, you cannot use any of the other functions nor deallocate/allocate nodes in the list.</li>
+</ul>
+
+<p>Refer to the comments within <code class="highlighter-rouge">queue.c</code> for any guidance and rules for special cases for each function.</p>
+
+<p>For functions that provide strings as arguments, you are expected to allocate and copy
+those strings to the list. You will use <code class="highlighter-rouge">malloc</code> to create the space required for the
+string and you can assume that the given string is well-formed (contains a null terminator).
+Therefore, you do not need to assume any upper-bound on the string size. Just write your
+code to work for any arbitrary string length.</p>
+
+<p>Remember to account for null terminators in your string allocation!</p>
+
+<p>Two functions, as indicated above, require an implementation that provides the performance
+characteristic of constant time: <code class="highlighter-rouge">O(1)</code>. Doing this likely requires some thoughtful changes
+to the <code class="highlighter-rouge">queue_t</code> structure and careful additional work in other functions.</p>
+
+<p>Your program will be tested on queues of over 1,000,000 elements. Therefore, recursive
+functions will not work because you will exhaust the alloted size of the stack. The OS
+only gives you so much of it! Instead, you will have to always use loops to traverse
+the items in your list.</p>
+
+<h2 id="testing">Testing</h2>
+
+<p>We have graciously provided a Makefile for this lab. As such, you can compile your work as so:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make
+</code></pre></div></div>
+
+<p>If there are no errors, the compiler will generate several programs. One program is <code class="highlighter-rouge">qtest</code>
+which gives you an interactive interface in which to test your queue.
+You can create, modify, and examine a queue.
+Documentation on commands can be seen by running the <code class="highlighter-rouge">qtest</code> application and typing <code class="highlighter-rouge">help</code>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./qtest
+cmd&gt; help
+</code></pre></div></div>
+
+<p>The following file (traces/trace-eg.cmd) illustrates an example command sequence:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Demonstration of queue testing framework
+# Use help command to see list of commands and options
+# Initial queue is NULL.
+show
+# Create empty queue
+new
+# Fill it with some values.  First at the head
+ih dolphin
+ih bear
+ih gerbil
+# Now at the tail
+it meerkat
+it bear
+# Reverse it
+reverse
+# See how long it is
+size
+# Delete queue.  Goes back to a NULL queue.
+free
+# Exit program
+quit
+</code></pre></div></div>
+
+<p>You can use these commands yourself line-by-line with <code class="highlighter-rouge">qtest</code> or you can batch them from a file list this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./qtest -f traces/trace-eg.cmd
+</code></pre></div></div>
+
+<p>With the starter code, you will see that many of these operations are not implemented properly.</p>
+
+<p>The <code class="highlighter-rouge">traces</code> directory contains 15 trace files, with names of the form <code class="highlighter-rouge">trace-k-cat.txt</code>, where <code class="highlighter-rouge">k</code> is the trace number and <code class="highlighter-rouge">cat</code> specifies the category of properties being tested.
+Each trace consists of a sequence of commands, similar to those shown above.
+They test different aspects of the correctness, robustness, and performance of your program.
+You can use these, your own trace files, and direct interactions with <code class="highlighter-rouge">qtest</code> to test and debug your program.</p>
+
+<h2 id="evaluation">Evaluation</h2>
+
+<p>Your program will be evaluated using the fifteen traces described above found in the <code class="highlighter-rouge">traces</code> directory of your handout package.
+You will be given credit (either 6 or 7 points, depending on the trace) for each one that executes correctly, summing to a maximum score of 100.
+This will be your score for the assignment, the grading being done completely automatically.</p>
+
+<p>The driver program <code class="highlighter-rouge">driver.py</code> runs <code class="highlighter-rouge">qtest</code> on the traces and computes the score.
+This is the same program that will be used to compute your score with Gradescope.
+You can invoke the driver with the command:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make test
+</code></pre></div></div>
+
+<h2 id="submission">Submission</h2>
+
+<p>In a change of pace, you will upload two files: <code class="highlighter-rouge">queue.c</code> and <code class="highlighter-rouge">queue.h</code> <strong>and only these two files</strong> to Gradescope.
+You may submit as many times as you like until the due date.</p>
+
+<h2 id="reflection">Reflection</h2>
+
+<p>It is good to start this assignment early.
+C, like many things in life, takes practice.
+This assignment stresses the importance of careful and deliberate programming.
+Write short statements, do less on each line, and comment your code very liberally.</p>
+
+<p>If you find yourself frustrated, take an hour away from it.
+Come back to it with a fresh point of view.
+Read the code over and what it does.
+Remember that the computer is going to do exactly what it is told, so do not read back what you think you wrote.
+Read what is actually there and if that is what you intended.</p>
+
+<p>It may help to draw out a diagram of the data structure as you trace your own code.
+You might find yourself, as I did, going,</p>
+
+<blockquote>
+  <p>“Ah, right, I can’t assign <code class="highlighter-rouge">cur = cur-&gt;next</code> after I have done <code class="highlighter-rouge">cur-&gt;next = last</code>! I need to keep that pointer in a temp variable somewhere.”</p>
+</blockquote>
+
+<p>Mastery does not mean you always get it right on the first try.</p>
+
+
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/cs449/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">CS 449</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">CS 449</li><li><a class="u-email" href="mailto:dwilk@cs.pitt.edu">dwilk@cs.pitt.edu</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/wilkie"><svg class="svg-icon"><use xlink:href="/cs449/assets/minima-social-icons.svg#github"></use></svg> <span class="username">wilkie</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>CS 449 (26790) / COE (22632) / CS 449 (26745);
+MW 3:00PM
+324 Cathedral of Learning
+TTh 1:00PM
+125 Frick Fine Arts
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
