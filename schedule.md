@@ -33,8 +33,11 @@ The schedule is always tentative. I may shift topics around.
 | W February   5 /<br> Th February 6 | Memory Management: The Gritty Reality |
 |              | Looking at how malloc and free can be implemented. |
 | M February  10 /<br> T February 11 | Buddy Allocation / Introduction to x86 Assembly |
+|              | The basics of x86 and the C ABI<br><br>**Introduction to x86** [[pdf]({{site.baseurl}}/slides/07_CS449_Introduction-to-x86.pdf)] [[pptx]({{site.baseurl}}/slides/07_CS449_Introduction-to-x86.pptx)] |
 | W February  12 /<br> Th February 13 | x86 Assembly |
+|              | |
 | M Febrary   24 /<br> T February 25 | **MIDTERM** Regular time and place. Closed-book / No tools or calculators. |
+|              | |
 | Th April 23  | **8AM FINAL CL324** for Monday/Wednesday Section (CS 26790) |
 | Sa April 25  | **8AM FINAL FK125** for Tuesday/Thursday Section (CS 26745) |
 
