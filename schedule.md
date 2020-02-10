@@ -36,7 +36,11 @@ The schedule is always tentative. I may shift topics around.
 |              | The basics of x86 and the C ABI<br><br>**Introduction to x86** [[pdf]({{site.baseurl}}/slides/07_CS449_Introduction-to-x86.pdf)] [[pptx]({{site.baseurl}}/slides/07_CS449_Introduction-to-x86.pptx)] |
 | W February  12 /<br> Th February 13 | x86 Assembly |
 |              | |
-| M Febrary   24 /<br> T February 25 | **MIDTERM** Regular time and place. Closed-book / No tools or calculators. |
+| M February  17 /<br> T February 18 | Debugging: Being a code detective |
+|              | |
+| W February  19 /<br> Th February 20 | Creating Chaos: Buffer overflows and other monsters |
+|              | |
+| M February  24 /<br> T February 25 | **MIDTERM** Regular time and place. Closed-book / No tools or calculators. |
 |              | |
 | Th April 23  | **8AM FINAL CL324** for Monday/Wednesday Section (CS 26790) |
 | Sa April 25  | **8AM FINAL FK125** for Tuesday/Thursday Section (CS 26745) |
