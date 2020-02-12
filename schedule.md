@@ -41,7 +41,15 @@ The schedule is always tentative. I may shift topics around.
 |              | |
 | W February  19 /<br> Th February 20 | Creating Chaos: Buffer overflows and other monsters |
 |              | |
-| M February  24 /<br> T February 25 | **MIDTERM** Regular time and place. Closed-book / No tools or calculators. |
+| M February  24 /<br> T February 25 | Spillover day and Review (time permitting) |
+|              | |
+| W February  26 /<br> Th February 27 | **MIDTERM** Regular time and place. Closed-book / No tools or calculators. |
+|              | |
+| M March     9 /<br> T March 10 | **No Class: Spring Break** |
+|              | |
+| W March     11 /<br> Th March 12 | **No Class: Spring Break** |
+|              | |
+| F March     13 | **No Recitations: Spring Break** |
 |              | |
 | Th April 23  | **8AM FINAL CL324** for Monday/Wednesday Section (CS 26790) |
 | Sa April 25  | **8AM FINAL FK125** for Tuesday/Thursday Section (CS 26745) |
