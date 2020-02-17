@@ -26,5 +26,5 @@ Please look over this document.
 To download the [puzzle executable]({{ site.baseurl }}/resources/worksheets/gdb/puzzle), while on thoth use the following command to place the executable in the current directory:
 
 ```
-wget {{site.baseurl}}/resources/worksheets/gdb/puzzle
+wget {{ site.url }}{{site.baseurl}}/resources/worksheets/gdb/puzzle
 ```
