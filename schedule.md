@@ -36,10 +36,12 @@ The schedule is always tentative. I may shift topics around.
 | M February  10 /<br> T February 11 | Buddy Allocation / Introduction to x86 Assembly |
 |              | The basics of x86 and the C ABI<br><br>**Introduction to x86** [[pdf]({{site.baseurl}}/slides/07_CS449_Introduction-to-x86.pdf)] [[pptx]({{site.baseurl}}/slides/07_CS449_Introduction-to-x86.pptx)] |
 | W February  12 /<br> Th February 13 | x86 Assembly |
+|              | Looking at control patterns in x86 and making use of the C ABI<br><br>**Investigating the Code** [[pdf]({{site.baseurl}}/slides/08_CS449_Investigating-the-Code.pdf)] [[pptx]({{site.baseurl}}/slides/08_CS449_Investigating-the-Code.pptx)] |
 |              | |
 | M February  17 /<br> T February 18 | Debugging: Being a code detective |
 |              | |
 | W February  19 /<br> Th February 20 | Creating Chaos: Buffer overflows and other monsters |
+|              | Smashing the stack, and other fun things which are not always fun for others.<br><br>**Buffer Overflows** [[pdf]({{site.baseurl}}/slides/09-buffer-overflow.pdf)] [[pptx]({{site.baseurl}}/slides/09-buffer-overflow.pptx)] |
 |              | |
 | M February  24 /<br> T February 25 | Spillover day and Review (time permitting) |
 |              | |

@@ -17,4 +17,14 @@ Please look over this document.
 
 ### Makefiles
 
-| [makefiles.pdf]({{ site.baseurl }}/resources/worksheets/makefiles.pdf) | [makefiles.doc]({{ site.baseurl }}/resources/worksheets/makefiles.doc) |
+| [makefiles.pdf]({{ site.baseurl }}/resources/worksheets/makefiles/makefiles.pdf) | [makefiles.doc]({{ site.baseurl }}/resources/worksheets/makefiles/makefiles.doc) |
+
+### GDB
+
+| [gdb.pdf]({{ site.baseurl }}/resources/worksheets/gdb/gdb.pdf) | [gdb.doc]({{ site.baseurl }}/resources/worksheets/gdb/gdb.doc) |
+
+To download the [puzzle executable]({{ site.baseurl }}/resources/worksheets/gdb/puzzle), while on thoth use the following command to place the executable in the current directory:
+
+```
+wget {{site.baseurl}}/resources/worksheets/gdb/puzzle
+```
