@@ -23,8 +23,9 @@ Please look over this document.
 
 | [gdb.pdf]({{ site.baseurl }}/resources/worksheets/gdb/gdb.pdf) | [gdb.doc]({{ site.baseurl }}/resources/worksheets/gdb/gdb.doc) |
 
-To download the [puzzle executable]({{ site.baseurl }}/resources/worksheets/gdb/puzzle), while on thoth use the following command to place the executable in the current directory:
+To download the [puzzle executable]({{ site.baseurl }}/resources/worksheets/gdb/puzzle), while on thoth use the following command to place the executable in the current directory (and give it executable access with `chmod`):
 
 ```
 wget {{ site.url }}{{site.baseurl}}/resources/worksheets/gdb/puzzle
+chmod +x puzzle
 ```
