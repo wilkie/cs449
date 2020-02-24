@@ -39,12 +39,12 @@ The schedule is always tentative. I may shift topics around.
 |              | Looking at control patterns in x86 and making use of the C ABI<br><br>**Investigating the Code** [[pdf]({{site.baseurl}}/slides/08_CS449_Investigating-the-Code.pdf)] [[pptx]({{site.baseurl}}/slides/08_CS449_Investigating-the-Code.pptx)] |
 |              | |
 | M February  17 /<br> T February 18 | Debugging: Being a code detective |
-|              | |
+|              | Some extra reading about real world uses of the same tools to [creating a profiling tool](https://jvns.ca/blog/2018/01/09/resolving-symbol-addresses/) by Julia Evans |
 | W February  19 /<br> Th February 20 | Creating Chaos: Buffer overflows and other monsters |
 |              | Smashing the stack, and other fun things which are not always fun for others.<br><br>**Buffer Overflows** [[pdf]({{site.baseurl}}/slides/09-buffer-overflow.pdf)] [[pptx]({{site.baseurl}}/slides/09-buffer-overflow.pptx)] |
 |              | |
 | M February  24 /<br> T February 25 | Spillover day and Review (time permitting) |
-|              | |
+|              | Stuff provided on exam: The C ABI specifics, what many of the assembly instructions mean (know the basics), the bias and lengths of bitfields of particular IEEE754 values (know how to deal with them). |
 | W February  26 /<br> Th February 27 | **MIDTERM** Regular time and place. Closed-book / No tools or calculators. |
 |              | |
 | M March     9 /<br> T March 10 | **No Class: Spring Break** |
