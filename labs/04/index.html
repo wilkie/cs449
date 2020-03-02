@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Malloc Lab | CS 449</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Malloc Lab" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Weight: 10% of your total 50% Lab Grade" />
+<meta property="og:description" content="Weight: 10% of your total 50% Lab Grade" />
+<link rel="canonical" href="https://wilkie.github.io/cs449/labs/04/" />
+<meta property="og:url" content="https://wilkie.github.io/cs449/labs/04/" />
+<meta property="og:site_name" content="CS 449" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-03-01T14:04:31-05:00" />
+<script type="application/ld+json">
+{"datePublished":"2020-03-01T14:04:31-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://wilkie.github.io/cs449/labs/04/"},"description":"Weight: 10% of your total 50% Lab Grade","@type":"BlogPosting","url":"https://wilkie.github.io/cs449/labs/04/","headline":"Malloc Lab","dateModified":"2020-03-01T14:04:31-05:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/cs449/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://wilkie.github.io/cs449/feed.xml" title="CS 449" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/cs449/">CS 449</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/cs449/about/">About</a><a class="page-link" href="/cs449/homework/">Homework</a><a class="page-link" href="/cs449/labs/">Labs</a><a class="page-link" href="/cs449/resources/">Resources</a><a class="page-link" href="/cs449/schedule/">Schedule</a><a class="page-link" href="/cs449/syllabus/">Syllabus</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        
+<h1>Malloc Lab: Memory allocators</h1>
+
+<p>
+<strong>Released</strong>: 12:00 AM Monday, March 2nd, 2020.
+</p>
+
+<p>
+<strong>Due</strong>: 11:59 PM Friday, March 20th, 2020.
+</p>
+
+<p>
+Here, we will use our power over pointers to implement
+a simple linked list memory allocator.
+
+</p>
+
+
+<p><strong>Weight</strong>: 10% of your total 50% Lab Grade</p>
+
+<p><strong>Note</strong>: DEFINITELY start early enough to get through the more troublesome parts of debugging this one!</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>In this assignment, you will implement a basic memory allocator much like the one
+discussed in lecture. We will provide you with much of the boilerplate code to
+start from.</p>
+
+<p>This time we cannot use <code class="highlighter-rouge">malloc</code> and <code class="highlighter-rouge">free</code> to manage the data for our memory
+allocator. We are implementing them ourselves!!</p>
+
+<p>In this case, the two functions you will implement are <code class="highlighter-rouge">mm_malloc</code> and <code class="highlighter-rouge">mm_free</code> and you will implement them in three phases.
+The first phase is the most naive implementation which will be a bit inefficient.
+We will then improve this implementation to gain better performance.</p>
+
+<h2 id="downloading">Downloading</h2>
+
+<p>To get the boilerplate code and the testing harness for this assignment, use the following
+command on thoth:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget https://wilkie.github.io/cs449/labs/04/malloclab-handout.zip
+</code></pre></div></div>
+
+<p>This will download the <code class="highlighter-rouge">malloclab-handout.zip</code> file to your (private) directory on the <code class="highlighter-rouge">thoth</code> Linux machine (make sure you are logged into this!) in which you will do your work.</p>
+
+<p>Then issue the command:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>unzip malloclab-handout.zip
+</code></pre></div></div>
+
+<p>This will cause a number of files to be unpacked in the directory <code class="highlighter-rouge">malloclab-handout</code>.
+Navigate to that directory and look at the files.
+The file you will be modifying is <code class="highlighter-rouge">mm.c</code>.
+The <code class="highlighter-rouge">mm.c</code> file contains a skeleton for the functions that interact with the data structures that manage the state of memory.
+It also contains the definition of the data structures we will use to represent the blocks on the heap.
+The <code class="highlighter-rouge">mm.h</code> file contains just the function prototypes.</p>
+
+<p>Consult the <code class="highlighter-rouge">README</code> file for a more thorough description of the files and how to use them.</p>
+
+<h2 id="implementation">Implementation</h2>
+
+<p>The <code class="highlighter-rouge">mm.c</code> file contains declarations which define the following structures, which you do not need to modify:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="k">struct</span> <span class="n">_BlockInfo</span> <span class="p">{</span>
+  <span class="c1">// Size of the block and whether or not the block is in use or free.
+</span>  <span class="c1">// When the size is negative, the block is currently free.
+</span>  <span class="kt">long</span> <span class="kt">int</span> <span class="n">size</span><span class="p">;</span>
+  <span class="c1">// Pointer to the previous block in the list.
+</span>  <span class="k">struct</span> <span class="n">_Block</span><span class="o">*</span> <span class="n">prev</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">BlockInfo</span><span class="p">;</span>
+
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">_FreeBlockInfo</span> <span class="p">{</span>
+  <span class="c1">// Pointer to the next free block in the list.
+</span>  <span class="k">struct</span> <span class="n">_Block</span><span class="o">*</span> <span class="n">nextFree</span><span class="p">;</span>
+  <span class="c1">// Pointer to the previous free block in the list.
+</span>  <span class="k">struct</span> <span class="n">_Block</span><span class="o">*</span> <span class="n">prevFree</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">FreeBlockInfo</span><span class="p">;</span>
+
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">_Block</span> <span class="p">{</span>
+  <span class="n">BlockInfo</span> <span class="n">info</span><span class="p">;</span>
+  <span class="n">FreeBlockInfo</span> <span class="n">freeNode</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">Block</span><span class="p">;</span>
+
+<span class="cm">/* Pointer to the first FreeBlockInfo in the free list, the list's head. */</span>
+<span class="k">static</span> <span class="n">Block</span><span class="o">*</span> <span class="n">free_list_head</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="k">static</span> <span class="n">Block</span><span class="o">*</span> <span class="n">malloc_list_tail</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>The important structure that you will use is the <code class="highlighter-rouge">Block</code> structure.
+This contains the metadata for your block.</p>
+
+<p>The <code class="highlighter-rouge">info</code> field of the structure is the metadata that is a part of <em>every</em> block
+on the heap, free and allocated alike. The <code class="highlighter-rouge">freeNode</code> field is metadata that only
+a free block has.</p>
+
+<p>As a space optimization, you will allow the user program to write over the
+<code class="highlighter-rouge">freeNode</code> information. In memory, the <code class="highlighter-rouge">info</code> struct comes before the <code class="highlighter-rouge">freeNode</code>
+section in memory. If you placed the <code class="highlighter-rouge">Block</code> structure in memory, then if you
+add <code class="highlighter-rouge">sizeof(BlockInfo)</code> to a pointer to a <code class="highlighter-rouge">Block</code> structure, it will be the
+address of the <code class="highlighter-rouge">FreeBlockInfo</code> structure. It is <em>this</em> address that should be
+returned by <code class="highlighter-rouge">mm_malloc</code> to make the best use of space.</p>
+
+<p>You can ignore pointer arithmetic and add directly to a pointer using the
+<code class="highlighter-rouge">UNSCALED_POINTER_ADD</code> macro we provided.</p>
+
+<p>In this case, if you have a pointer to a <code class="highlighter-rouge">Block</code> called <code class="highlighter-rouge">ptrFreeBlock</code> and you
+want <code class="highlighter-rouge">mm_malloc</code> to return the first address that a program can safely write
+to, you can write:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="n">UNSCALED_POINTER_ADD</span><span class="p">(</span><span class="n">ptrFreeBlock</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">BlockInfo</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h3 id="free-blocks">Free Blocks</h3>
+
+<p>In this assignment, we are going to treat free blocks as being any <code class="highlighter-rouge">Block</code> that
+has a negative <code class="highlighter-rouge">size</code>. An allocated block, then, is a <code class="highlighter-rouge">Block</code> that has a positive
+<code class="highlighter-rouge">size</code>.</p>
+
+<p>Here is some code that will determine if a <code class="highlighter-rouge">Block</code> is free:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Block</span><span class="o">*</span> <span class="n">ptrBlock</span> <span class="o">=</span> <span class="n">first_block</span><span class="p">();</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">ptrBlock</span><span class="o">-&gt;</span><span class="n">info</span><span class="p">.</span><span class="n">size</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Free Block
+</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p>Notice the <code class="highlighter-rouge">ptrBlock-&gt;info</code> arrow syntax dereferencing the pointer to a <code class="highlighter-rouge">Block</code>
+structure. Yet, since the <code class="highlighter-rouge">info</code> field is not a pointer, we directly refer to
+the fields within. Therefore, <code class="highlighter-rouge">info.size</code> uses a dot syntax. Funky!</p>
+
+<!--![The queue structure showing a queue with a head field pointing to several list nodes. Each node has a string pointer with some random string value. The final node, labelled tail, is pointing to NULL.](/cs449/labs/03/queuelab_fig1.png)-->
+
+<h2 id="your-turn">Your turn</h2>
+
+<p>Your task is to modify both the <code class="highlighter-rouge">mm.c</code> file to fully implement the following functions:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">mm_malloc</code> - Allocate a block of memory of the given size.</li>
+  <li><code class="highlighter-rouge">mm_free</code> - Deallocate the given pointer that was previously allocated by <code class="highlighter-rouge">mm_malloc</code>.</li>
+</ul>
+
+<p>In the process of implementing these, you should find implementing these helper functions useful:</p>
+<ul>
+  <li><code class="highlighter-rouge">coalesce</code> - Given a free block, coalesce with its neighbors if they are also free.</li>
+  <li><code class="highlighter-rouge">searchList</code> - Look for a free block that can fit the given amount of space exhaustively.</li>
+  <li><code class="highlighter-rouge">searchFreeList</code> - Look for a free block that can fit the given amount of space by using the faster free list data structure.</li>
+</ul>
+
+<p>We have provided quite a few helpful functions that will help you:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">requestMoreSpace</code> - Will expand the heap by the given number of bytes.</li>
+  <li><code class="highlighter-rouge">mm_init</code> - This will reset the heap. You should not modify this.</li>
+  <li><code class="highlighter-rouge">first_block</code> - Will return a pointer to the first <code class="highlighter-rouge">Block</code> structure on the heap. It just assumes there is a <code class="highlighter-rouge">Block</code> structure written to the first bytes of the heap.</li>
+  <li><code class="highlighter-rouge">next_block</code> - When given a <code class="highlighter-rouge">Block</code> pointer, it will use the metadata to give you the next <code class="highlighter-rouge">Block</code> in memory. This assumes a properly managed heap where each <code class="highlighter-rouge">Block</code> is directly after the last one.</li>
+  <li><code class="highlighter-rouge">examine_heap</code> - Prints out the state of the heap assuming it is properly formed.</li>
+  <li><code class="highlighter-rouge">check_heap</code> - Checks your heap data structures for improper state. Can be useful for early debugging efforts.</li>
+</ul>
+
+<p>Refer to the comments within <code class="highlighter-rouge">mm.c</code> for any guidance and rules for special cases for each function.
+The implementations of provided functions can help you determine how to make use of other functions and how to properly read through your heap.</p>
+
+<h3 id="phase-1">Phase 1</h3>
+
+<p>In order to lessen the burden, it is recommended to implement this assignment in phases.
+The first phase will be our least performant implementation.
+It will be very naive and not use an explicit free list.
+That is, we only use the <code class="highlighter-rouge">BlockInfo</code> metadata (<code class="highlighter-rouge">size</code> and <code class="highlighter-rouge">prev</code>) and ignore <code class="highlighter-rouge">FreeBlockInfo</code>
+altogether. Do not worry about the free list just yet.</p>
+
+<p>Also, do not worry about <code class="highlighter-rouge">coalesce</code> either.
+Not coalescing blocks makes the memory manager very inefficient, but it will still give a
+correct answer.</p>
+
+<p>For this, when you allocate you only need to exhaustively find a block using <code class="highlighter-rouge">searchList</code> and
+then, if you cannot find one, allocate more space to create a free block of the exact size
+you need.</p>
+
+<p>When you have such a block, you can then allocate it (adjust the size field such that it is
+considered ‘allocated’).</p>
+
+<p>If the block is large enough to split into two, then you should do so.</p>
+
+<p>It should be helpful to maintain <code class="highlighter-rouge">malloc_list_tail</code> to always point to the <code class="highlighter-rouge">Block</code> at the
+end of the heap (largest address.)
+You only need to worry about <code class="highlighter-rouge">free_list_head</code> in phase 3.</p>
+
+<p>Your <code class="highlighter-rouge">mm_free</code> implementation can just… mark it free again. How would we do that?</p>
+
+<p><strong>Remember</strong>: When you split a block, it needs enough space for all of the metadata!</p>
+
+<h3 id="phase-2">Phase 2</h3>
+
+<p>At this point, you should have a malloc implementation that passes all the tests, but
+performs just miserably. Let’s improve it, now.</p>
+
+<p>Implement <code class="highlighter-rouge">coalesce()</code> such that adjacent free blocks are merged when <code class="highlighter-rouge">mm_free</code> is
+called.</p>
+
+<p><strong>Remember</strong>: When you merge a block, the final block gains not only that block’s
+free space, but also the space taken up by the metadata!</p>
+
+<h3 id="phase-3">Phase 3</h3>
+
+<p>Adding <code class="highlighter-rouge">coalesce</code> should still result in a slightly better performing <code class="highlighter-rouge">mm_malloc</code>
+implementation, and it should still pass all of its tests.</p>
+
+<p>When you have a working implementation, we can add the final step: the free list.</p>
+
+<p>The free list means making use of the <code class="highlighter-rouge">FreeBlockInfo</code> structure that is part of
+every <code class="highlighter-rouge">Block</code>. This contains a <code class="highlighter-rouge">nextFree</code> and <code class="highlighter-rouge">prevFree</code> field. With this, we
+can implement a single-ended doubly linked list to maintain a list of only the
+free blocks.</p>
+
+<p>In your <code class="highlighter-rouge">mm_malloc</code>, you will need to remove the node from the free list and
+also carefully ensure the free block from a split is in the list.</p>
+
+<p>In your <code class="highlighter-rouge">mm_free</code>, you will need to add a node to the head of the free list.
+When you coalesce, you will need to ensure that the logic of the linked list
+remains intact.</p>
+
+<p>In the end, you should see a vast improvement in performance.</p>
+
+<p><strong>Note/Hint</strong>: These nodes do not have to be in any particular order.</p>
+
+<h2 id="testing">Testing</h2>
+
+<p>We have graciously provided a Makefile for this lab. As such, you can compile your work as so:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make
+</code></pre></div></div>
+
+<p>If there are no errors, the compiler will generate several programs. One program is <code class="highlighter-rouge">mdriver</code>
+which will test your implementation against some exhaustive program traces.
+Documentation on commands can be seen by running the <code class="highlighter-rouge">mdriver</code> with the <code class="highlighter-rouge">-h</code> flag:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./mdriver -h
+</code></pre></div></div>
+
+<p>The following file (traces/short1-bal.rep) illustrates an example trace:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>20000
+6
+12
+1
+a 0 2040
+a 1 2040
+f 1
+a 2 48
+a 3 4072
+f 3
+a 4 4072
+f 0
+f 2
+a 5 4072
+f 4
+f 5
+</code></pre></div></div>
+
+<p>You can mostly ignore the first few lines. Lines that start with <code class="highlighter-rouge">a</code> will call <code class="highlighter-rouge">mm_malloc</code> with the size
+passed being the last number of that line. The lines starting with <code class="highlighter-rouge">f</code> will call <code class="highlighter-rouge">mm_free</code> with the
+address returned by the corresponding <code class="highlighter-rouge">mm_malloc</code> call. That is, the prior <code class="highlighter-rouge">a</code> line of the trace with
+the same identifying number (the second token on every <code class="highlighter-rouge">a</code> or <code class="highlighter-rouge">f</code> line).</p>
+
+<p>You can write your own trace by copying an existing one.
+To use any of the provided traces, just use <code class="highlighter-rouge">mdriver</code> like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./mdriver -f traces/short1-bal.rep
+</code></pre></div></div>
+
+<p>If there are no errors, it will print only one line which shows the relative performance of your
+implementation.</p>
+
+<p>You can run all traces using:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./mdriver
+</code></pre></div></div>
+
+<p>Generally, with the initial phase, you will be in the 40s running all traces. Your final
+implementation in the final phase should be in the high 60s when running all traces.
+It may deviate due to the server load.</p>
+
+<h2 id="evaluation">Evaluation</h2>
+
+<p>Your program will be evaluated using the thirteen traces described above found in the <code class="highlighter-rouge">traces</code> directory of your handout package.</p>
+
+<h2 id="submission">Submission</h2>
+
+<p>You only need to upload a single file <code class="highlighter-rouge">mm.c</code> to Gradescope for this assignment.
+You may submit as many times as you like until the due date.</p>
+
+<h2 id="reflection">Reflection</h2>
+
+<p>It is good to start this assignment early.
+C, like many things in life, takes practice.
+This assignment stresses the importance of careful and deliberate programming.
+Write short statements, do less on each line, and comment your code very liberally.</p>
+
+<p>If you find yourself frustrated, take an hour away from it.
+Come back to it with a fresh point of view.
+Read the code over and what it does.
+Remember that the computer is going to do exactly what it is told, so do not read back what you think you wrote.
+Read what is actually there and if that is what you intended.</p>
+
+<p>It may help to draw out a diagram of the data structure as you trace your own code.
+You might find yourself, as I did, going,</p>
+
+<blockquote>
+  <p>“Ah, right, I can’t assign <code class="highlighter-rouge">cur = cur-&gt;next</code> after I have done <code class="highlighter-rouge">cur-&gt;next = last</code>! I need to keep that pointer in a temp variable somewhere.”</p>
+</blockquote>
+
+<p>Mastery does not mean you always get it right on the first try.</p>
+
+
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/cs449/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">CS 449</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">CS 449</li><li><a class="u-email" href="mailto:dwilk@cs.pitt.edu">dwilk@cs.pitt.edu</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/wilkie"><svg class="svg-icon"><use xlink:href="/cs449/assets/minima-social-icons.svg#github"></use></svg> <span class="username">wilkie</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>CS 449 (26790) / COE (22632) / CS 449 (26745);
+MW 3:00PM
+324 Cathedral of Learning
+TTh 1:00PM
+125 Frick Fine Arts
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
