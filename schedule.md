@@ -47,11 +47,35 @@ The schedule is always tentative. I may shift topics around.
 |              | Stuff provided on exam: The C ABI specifics, what many of the assembly instructions mean (know the basics), the bias and lengths of bitfields of particular IEEE754 values (know how to deal with them). |
 | W February  26 /<br> Th February 27 | **MIDTERM** Regular time and place. Closed-book / No tools or calculators. |
 |              | |
+| M March      2 /<br> T March     3 | Linking and Loading |
+|              | **How Programs Are Made** [[pdf]({{ site.baseurl }}/slides/10_CS449_How-Programs-Are-Made.pdf)] [[pptx]({{ site.baseurl }}/slides/10_CS449_How-Programs-Are-Made.pptx)] |
+| W March      4 /<br> Th March     5 | |
+|              | |
 | M March     9 /<br> T March 10 | **No Class: Spring Break** |
 |              | |
 | W March     11 /<br> Th March 12 | **No Class: Spring Break** |
 |              | |
 | F March     13 | **No Recitations: Spring Break** |
+|              | |
+| M March     16 /<br> T March    17 | |
+|              | |
+| W March     18 /<br> Th March   19 | |
+|              | |
+| M March     23 /<br> T March    24 | |
+|              | |
+| W March     25 /<br> Th March   26 | |
+|              | |
+| M March     30 /<br> T March    31 | |
+|              | |
+| W April      1 /<br> Th April    2 | |
+|              | |
+| M April      6 /<br> T April     7 | |
+|              | |
+| W April      8 /<br> Th April    9 | |
+|              | |
+| M April     13 /<br> T April    14 | |
+|              | |
+| W April     15 /<br> Th April   16 | |
 |              | |
 | Th April 23  | **8AM FINAL CL324** for Monday/Wednesday Section (CS 26790) |
 | Sa April 25  | **8AM FINAL FK125** for Tuesday/Thursday Section (CS 26745) |
@@ -66,7 +90,7 @@ The schedule is always tentative. I may shift topics around.
 
 **E-Mail**: gol6@pitt.edu
 
-**Office**: 5806 Sennott Square (UTA office)
+**Virtual Office**: TBD
 
 ### Alex Conway
 
@@ -76,7 +100,7 @@ The schedule is always tentative. I may shift topics around.
 
 **E-Mail**: lac216@pitt.edu
 
-**Office**: 5806 Sennott Square (UTA office)
+**Virtual Office**: TBD
 
 ### Jon Rutkauskas
 
@@ -86,7 +110,7 @@ The schedule is always tentative. I may shift topics around.
 
 **E-Mail**: jsr68@pitt.edu
 
-**Office**: 5806 Sennott Square (UTA office)
+**Virtual Office**: https://pitt.zoom.us/j/4951906131
 
 ### Zack Hable
 
@@ -96,7 +120,7 @@ The schedule is always tentative. I may shift topics around.
 
 **E-Mail**: zack.hable@pitt.edu
 
-**Office**: 5806 Sennott Square (UTA office)
+**Virtual Office**: TBD
 
 ### Instructor
 
@@ -105,5 +129,7 @@ The schedule is always tentative. I may shift topics around.
 **Friday**: 1:00PM - 2:00PM
 
 **Location**: 5413 Sennott Square
+
+**Virtual Office**: TBD
 
 **Other**: By appointment. <mailto:dwilk@cs.pitt.edu> Please place "CS449" in the subject line.
