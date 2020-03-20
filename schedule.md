@@ -110,7 +110,7 @@ The schedule is always tentative. I may shift topics around.
 
 **E-Mail**: jsr68@pitt.edu
 
-**Virtual Office**: https://pitt.zoom.us/j/4951906131
+**Virtual Office**: <https://pitt.zoom.us/j/4951906131>
 
 ### Zack Hable
 
@@ -130,6 +130,6 @@ The schedule is always tentative. I may shift topics around.
 
 **Location**: 5413 Sennott Square
 
-**Virtual Office**: TBD
+**Virtual Office**: <https://pitt.zoom.us/j/9656158913>
 
 **Other**: By appointment. <mailto:dwilk@cs.pitt.edu> Please place "CS449" in the subject line.
