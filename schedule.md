@@ -57,12 +57,12 @@ The schedule is always tentative. I may shift topics around.
 |              | |
 | F March     13 | **No Recitations: Spring Break** |
 |              | |
-| M March     16 /<br> T March    17 | |
+| M March     16 /<br> T March    17 | **No Class: Chaos** |
 |              | |
-| W March     18 /<br> Th March   19 | |
+| W March     18 /<br> Th March   19 | **No Class: Chaos** |
 |              | |
-| M March     23 /<br> T March    24 | |
-|              | |
+| M March     23 /<br> T March    24 | Scheduling and Interrupts |
+|              | **How Programs Are Managed** [[mp4](https://video.449.wilkiepedia.org/videos/watch/ec0d2d5d-9bd2-42a9-a18e-5f375bb12029)] |
 | W March     25 /<br> Th March   26 | |
 |              | |
 | M March     30 /<br> T March    31 | |
