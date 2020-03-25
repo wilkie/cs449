@@ -124,12 +124,12 @@ The schedule is always tentative. I may shift topics around.
 
 ### Instructor
 
-**Wednesday**: 1:00PM - 2:30PM
+**Wednesday**: 1:30PM - 3:30PM **UPDATED**
 
 **Friday**: 1:00PM - 2:00PM
 
 **Location**: 5413 Sennott Square
 
-**Virtual Office**: <https://pitt.zoom.us/j/9656158913>
+**Virtual Office**: Direct Message on Riot, Please. <https://chat.449.wilkiepedia.org>
 
 **Other**: By appointment. <mailto:dwilk@cs.pitt.edu> Please place "CS449" in the subject line.
