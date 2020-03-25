@@ -62,9 +62,9 @@ The schedule is always tentative. I may shift topics around.
 | W March     18 /<br> Th March   19 | **No Class: Chaos** |
 |              | |
 | M March     23 /<br> T March    24 | Scheduling and Interrupts |
-|              | **How Programs Are Managed** [[mp4](https://video.449.wilkiepedia.org/videos/watch/ec0d2d5d-9bd2-42a9-a18e-5f375bb12029)] |
-| W March     25 /<br> Th March   26 | |
-|              | |
+|              | **How Programs Are Managed** [[mp4](https://video.449.wilkiepedia.org/videos/watch/ec0d2d5d-9bd2-42a9-a18e-5f375bb12029)] [[pdf]({{ site.baseurl }}/slides/11_CS449_How-Programs-Are-Managed.pdf)] [[pptx]({{site.baseurl}}/slides/11_CS449_How-Programs-Are-Managed.pptx)] |
+| W March     25 /<br> Th March   26 | Process Creation and Concurrency |
+|              | **How Programs Reproduce** [mp4 - TBA] [[pdf]({{site.baseurl}}/slides/12_CS449_How-Programs-Reproduce.pdf)] [[pptx]({{site.baseurl}}/slides/12_CS449_How-Programs-Reproduce.pptx)] |
 | M March     30 /<br> T March    31 | |
 |              | |
 | W April      1 /<br> Th April    2 | |
