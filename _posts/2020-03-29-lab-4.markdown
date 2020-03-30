@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "Lab 4 Released!"
+date:   2020-03-29 21:04:31 +0200
+categories: labs
+---
+
+Hello, all!
+
+Oh wow, I forgot to announce lab 3 here. Well, it is obvious that you all know it was there by now!
+
+Lab 4 is a go! Take a look and experiment with the executables and tools. Doing some reverse-engineering this time... so no coding. Some of you will be relieved.
+
+The first executable is one that should not take very long, so you could be 33% of the way done if no time at all if you start today!
+
+This is also due in a little less than two weeks, which should be enough time.
+
+Thank you! Happy hacking!
