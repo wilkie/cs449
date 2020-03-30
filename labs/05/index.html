@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Password Lab | CS 449</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Password Lab" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Weight: 10% of your total 50% Lab Grade" />
+<meta property="og:description" content="Weight: 10% of your total 50% Lab Grade" />
+<link rel="canonical" href="https://wilkie.github.io/cs449/labs/05/" />
+<meta property="og:url" content="https://wilkie.github.io/cs449/labs/05/" />
+<meta property="og:site_name" content="CS 449" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-03-29T15:04:31-04:00" />
+<script type="application/ld+json">
+{"datePublished":"2020-03-29T15:04:31-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://wilkie.github.io/cs449/labs/05/"},"description":"Weight: 10% of your total 50% Lab Grade","@type":"BlogPosting","url":"https://wilkie.github.io/cs449/labs/05/","headline":"Password Lab","dateModified":"2020-03-29T15:04:31-04:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/cs449/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://wilkie.github.io/cs449/feed.xml" title="CS 449" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/cs449/">CS 449</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/cs449/about/">About</a><a class="page-link" href="/cs449/homework/">Homework</a><a class="page-link" href="/cs449/labs/">Labs</a><a class="page-link" href="/cs449/resources/">Resources</a><a class="page-link" href="/cs449/schedule/">Schedule</a><a class="page-link" href="/cs449/syllabus/">Syllabus</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        
+<h1>Password Lab: Breaking into things, for great good</h1>
+
+<p>
+<strong>Released</strong>: 12:00 AM Monday, March 30th, 2020.
+</p>
+
+<p>
+<strong>Due</strong>: 11:59 PM Friday, April 10th, 2020.
+</p>
+
+<p>
+This assignment has us reverse engineer some
+programs and find the appropriate passwords.
+
+</p>
+
+
+<p><strong>Weight</strong>: 10% of your total 50% Lab Grade</p>
+
+<p><strong>Note</strong>: You, again, want to get a head start on this!</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>For this assignment, you will be given a set of executables without the source
+code. Each executable expects a line of input to be given and it will tell you
+whether or not the input is the expected password.</p>
+
+<p>You will use the tools we have discussed throughout the course, and perhaps
+some new tricks, to determine how the executables work. With that knowledge, you
+can then determine the password and use it to unlock the executable.</p>
+
+<p>For this assignment, we will only expect you to do the first three out of the
+total five executables. They begin with your username and end with a number
+indicating which of the five they are.</p>
+
+<p>The difficulty for each executable is roughly understood by the number appended
+to it. <code class="highlighter-rouge">&lt;user&gt;_1</code> is constructed in a simple way, relative to the others. Yet,
+<code class="highlighter-rouge">&lt;user&gt;_5</code> has had some processing done on it to obstruct the normal process a
+bit. Yet, the difficulty comes down to your own capability with the tools.</p>
+
+<p>If you are new to these tools and have not been using them on your other
+assignments, starting early is wise.</p>
+
+<h2 id="downloading--usage">Downloading / Usage</h2>
+
+<p>To get your executables, on thoth, create a directory and navigate to it. Then,
+use the following command on thoth:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp /u/SysLab/$USER/* .
+</code></pre></div></div>
+
+<p>This will copy the executables to your own space. Now, you can run each of them
+and do whatever you think of to learn how they work.</p>
+
+<p>For instance, given my username is <code class="highlighter-rouge">abc3</code>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./abc3_1
+
+</code></pre></div></div>
+
+<p>It will hang because it expects you to type in the password. Since I do not know
+what it is, I will type in some garbage. (If it still hangs after pressing enter
+it is expecting a longer string. This is a good hint to the expected password
+length.)</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./abc3_1
+asdfjasdflasdfhjkasd
+Sorry! Not correct!
+</code></pre></div></div>
+
+<p>Ah, dang. I wasn’t very lucky! The expected strings have been generated at
+random, so you are not likely to be able to determine them from brute force.</p>
+
+<p>Yet, after looking at the executable with the tools available, I can discover
+the appropriate password.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./abc3_1
+WDgTPwrlnAOOhsYCbbKEsIeUqksfLG
+Congratulations!
+Unlocked with passphrase WDgTPwrlnAOOhsYCbbKEsIeUqksfLG
+</code></pre></div></div>
+
+<p>Often the passwords will be nonsense strings of characters and symbols. There
+may be more than one possible password, but you only need to come up with a
+single working password.</p>
+
+<p>The more difficult programs may involve randomness of
+some kind during the runtime of the program, so the password may change slightly
+from one run to the next after a small window of time. For these, you will have
+to include all possible passwords, of which there will be a short list. This
+is not the case for any of the first three programs.</p>
+
+<h2 id="implementation">Implementation</h2>
+
+<p>You aren’t writing any code! Take a break from writing code (unless you want to
+write some helpful scripts for yourself.) This is about reading.</p>
+
+<h2 id="helpful-tools">Helpful Tools</h2>
+
+<p>For this assignment, you will look toward using a set of useful debugging and
+exploratory tools. These are all useful, in general, for reverse engineering
+work.</p>
+
+<h3 id="strings">strings</h3>
+
+<p>The first tool is a simple one. The <code class="highlighter-rouge">strings</code> command, when given any data file,
+which includes executables, it will print out every ASCII-encoded string it can
+find. It simply looks for uninterrupted patterns of valid printable characters
+and prints out each one that is of a certain length.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ strings ./abc3_1
+PTRhP
+&lt;[^_]
+&lt;8#}
+L[^_]
+,[^_]
+[^_]
+[^_]
+[^_]
+fffff.
+[^_]
+tr;E
+...
+</code></pre></div></div>
+
+<p>You’ll find that there are a LOT of strings… you may want to just save the
+output to a file and open that up in a text editor.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ strings ./abc3_1 &gt; strings_1.txt
+</code></pre></div></div>
+
+<p>One strategy is to look for strings you know something about already. Often
+useful strings are near well-known strings.</p>
+
+<h3 id="objdump">objdump</h3>
+
+<p>The next great tool is <code class="highlighter-rouge">objdump</code> which can disassemble executables. Again, we
+just specify the executable and some flags and it will print the output to the
+screen. Again, we should probably redirect the output to a text file.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ objdump -d ./abc3_1 &gt; asm_1.asm
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">-d</code> flag disassembles the <code class="highlighter-rouge">.text</code> section of this ELF executable. You can
+explore other flags by running <code class="highlighter-rouge">objdump -h</code> to see a listing of them.</p>
+
+<p>The output of <code class="highlighter-rouge">objdump</code>, here, will be the assembly dump. It shows several
+columns which we looked at in lecture. The left-hand column is the instruction
+address, which will be useful for <code class="highlighter-rouge">gdb</code>. The middle column is the machine code
+represented in hexadecimal octets. The right-hand column is the assembly code.</p>
+
+<p>You will see the names of functions in the form <code class="highlighter-rouge">080482cf &lt;main&gt;:</code> where the
+left-hand side is the address of that function and the part within the brackets
+is the name. For some of the most difficult executables, the names are not
+available. For most of the executables, the names are not that meaningful.</p>
+
+<h3 id="gdb">gdb</h3>
+
+<p>The final tool is <code class="highlighter-rouge">gdb</code>, which we have explored in lecture and recitation
+worksheets. This is a traditional debugger which allows you to pause and resume
+execution of a program while examining memory and register state as you go.</p>
+
+<p>With <code class="highlighter-rouge">gdb</code>, and with the other tools, you should be able to find a reasonable
+place to start looking. Please look at the gdb worksheet for a good beginner’s
+tutorial on using <code class="highlighter-rouge">gdb</code> to reverse engineer an executable.</p>
+
+<p>To use <code class="highlighter-rouge">gdb</code>, you simply invoke it with the executable as an argument.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ gdb ./abc3_1
+</code></pre></div></div>
+
+<p>Then you follow the example set in the worksheet on how to proceed.</p>
+
+<h2 id="your-turn">Your turn</h2>
+
+<p>For each of the first three executables, that is the ones ending in <code class="highlighter-rouge">_1</code>, <code class="highlighter-rouge">_2</code>,
+and <code class="highlighter-rouge">_3</code>, determine the password necessary to unlock. There may be more than one
+correct answer. You will only need to provide a single correct password to
+Gradescope for each program.</p>
+
+<p>For some small extra credit, there will be an option to submit the answers to
+the <code class="highlighter-rouge">_4</code> and <code class="highlighter-rouge">_5</code> programs that will be open throughout the remainder of the
+semester. <strong>Note</strong>: Only the first three programs are due by the given due date.</p>
+
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/cs449/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">CS 449</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">CS 449</li><li><a class="u-email" href="mailto:dwilk@cs.pitt.edu">dwilk@cs.pitt.edu</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/wilkie"><svg class="svg-icon"><use xlink:href="/cs449/assets/minima-social-icons.svg#github"></use></svg> <span class="username">wilkie</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>CS 449 (26790) / COE (22632) / CS 449 (26745);
+MW 3:00PM
+324 Cathedral of Learning
+TTh 1:00PM
+125 Frick Fine Arts
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
