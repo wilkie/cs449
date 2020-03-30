@@ -1,9 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://wilkie.github.io/cs449/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wilkie.github.io/cs449/" rel="alternate" type="text/html" /><updated>2020-03-29T22:09:36-04:00</updated><id>https://wilkie.github.io/cs449/</id><title type="html">CS 449</title><subtitle>CS 449 (26790) / COE (22632) / CS 449 (26745);
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://wilkie.github.io/cs449/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wilkie.github.io/cs449/" rel="alternate" type="text/html" /><updated>2020-03-29T22:17:59-04:00</updated><id>https://wilkie.github.io/cs449/</id><title type="html">CS 449</title><subtitle>CS 449 (26790) / COE (22632) / CS 449 (26745);
 MW 3:00PM
 324 Cathedral of Learning
 TTh 1:00PM
 125 Frick Fine Arts
-</subtitle><entry><title type="html">Lab 2 Released!</title><link href="https://wilkie.github.io/cs449/labs/2020/01/27/lab-2.html" rel="alternate" type="text/html" title="Lab 2 Released!" /><published>2020-01-27T14:04:31-05:00</published><updated>2020-01-27T14:04:31-05:00</updated><id>https://wilkie.github.io/cs449/labs/2020/01/27/lab-2</id><content type="html" xml:base="https://wilkie.github.io/cs449/labs/2020/01/27/lab-2.html">&lt;p&gt;Hello, all!&lt;/p&gt;
+</subtitle><entry><title type="html">Lab 4 Released!</title><link href="https://wilkie.github.io/cs449/labs/2020/03/29/lab-4.html" rel="alternate" type="text/html" title="Lab 4 Released!" /><published>2020-03-29T15:04:31-04:00</published><updated>2020-03-29T15:04:31-04:00</updated><id>https://wilkie.github.io/cs449/labs/2020/03/29/lab-4</id><content type="html" xml:base="https://wilkie.github.io/cs449/labs/2020/03/29/lab-4.html">&lt;p&gt;Hello, all!&lt;/p&gt;
+
+&lt;p&gt;Oh wow, I forgot to announce lab 3 here. Well, it is obvious that you all know it was there by now!&lt;/p&gt;
+
+&lt;p&gt;Lab 4 is a go! Take a look and experiment with the executables and tools. Doing some reverse-engineering this time… so no coding. Some of you will be relieved.&lt;/p&gt;
+
+&lt;p&gt;The first executable is one that should not take very long, so you could be 33% of the way done if no time at all if you start today!&lt;/p&gt;
+
+&lt;p&gt;This is also due in a little less than two weeks, which should be enough time.&lt;/p&gt;
+
+&lt;p&gt;Thank you! Happy hacking!&lt;/p&gt;</content><author><name></name></author><summary type="html">Hello, all!</summary></entry><entry><title type="html">Lab 2 Released!</title><link href="https://wilkie.github.io/cs449/labs/2020/01/27/lab-2.html" rel="alternate" type="text/html" title="Lab 2 Released!" /><published>2020-01-27T14:04:31-05:00</published><updated>2020-01-27T14:04:31-05:00</updated><id>https://wilkie.github.io/cs449/labs/2020/01/27/lab-2</id><content type="html" xml:base="https://wilkie.github.io/cs449/labs/2020/01/27/lab-2.html">&lt;p&gt;Hello, all!&lt;/p&gt;
 
 &lt;p&gt;I have placed Lab 2 in its proper place. Please look over it as soon as you can!&lt;/p&gt;
 
