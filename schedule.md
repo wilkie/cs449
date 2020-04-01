@@ -65,20 +65,20 @@ The schedule is always tentative. I may shift topics around.
 |              | **How Programs Are Managed** [[mp4](https://video.449.wilkiepedia.org/videos/watch/ec0d2d5d-9bd2-42a9-a18e-5f375bb12029)] [[pdf]({{ site.baseurl }}/slides/11_CS449_How-Programs-Are-Managed.pdf)] [[pptx]({{site.baseurl}}/slides/11_CS449_How-Programs-Are-Managed.pptx)] |
 | W March     25 /<br> Th March   26 | Process Creation and Concurrency |
 |              | **How Programs Reproduce** [[mp4](https://video.449.wilkiepedia.org/videos/watch/3d1aaf32-9638-4459-ae1a-ae2159518b92)] [[pdf]({{site.baseurl}}/slides/12_CS449_How-Programs-Reproduce.pdf)] [[pptx]({{site.baseurl}}/slides/12_CS449_How-Programs-Reproduce.pptx)] |
-| M March     30 /<br> T March    31 | |
+| M March     30 /<br> T March    31 | Virtual Memory |
+|              | **Virtual Memory** [[mp4](https://video.449.wilkiepedia.org/videos/watch/5454ca49-3b94-4cc8-a048-b3447bfac6d9)] [[pdf]({{site.baseurl}}/slides/13_CS449_Virtual-Memory.pdf)] [[pptx]({{site.baseurl}}/slides/13_CS449_Virtual-Memory.pptx)]<br><br>Lab 4 is released.|
+| W April      1 /<br> Th April    2 | The Memory Hierarchy: Caches |
+|              | **The Memory Hierarchy** [[mp4](https://video.449.wilkiepedia.org/videos/watch/d21714aa-bf80-4fcb-8c85-4385a72132ce)] [[pdf]({{ site.baseurl }}/slides/14_CS449_The-Memory-Hierarchy.pdf)] [[pptx]({{ site.baseurl }}/slides/14_CS449_The-Memory-Hierarchy.pptx)] |
+| M April      6 /<br> T April     7 | Threading and Concurrency |
 |              | |
-| W April      1 /<br> Th April    2 | |
+| W April      8 /<br> Th April    9 | Sockets and Networking |
 |              | |
-| M April      6 /<br> T April     7 | |
+| M April     13 /<br> T April    14 | Filesystems - How data is organized |
 |              | |
-| W April      8 /<br> Th April    9 | |
+| W April     15 /<br> Th April   16 | Distributed Storage |
 |              | |
-| M April     13 /<br> T April    14 | |
-|              | |
-| W April     15 /<br> Th April   16 | |
-|              | |
-| Th April 23  | **8AM FINAL CL324** for Monday/Wednesday Section (CS 26790) |
-| Sa April 25  | **8AM FINAL FK125** for Tuesday/Thursday Section (CS 26745) |
+| Th April 23  | **8AM FINAL CL324** for Monday/Wednesday Section (CS 26790) - **TO BE REPLACED WITH TAKE-HOME FINAL** |
+| Sa April 25  | **8AM FINAL FK125** for Tuesday/Thursday Section (CS 26745) - **TO BE REPLACED WITH TAKE-HOME FINAL** |
 
 ## Office Hours
 
