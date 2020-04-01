@@ -12,9 +12,9 @@ int main() {
     dst[i] = malloc(sizeof(int) * LIMIT);
   }
 
-  for (i = 0; i < LIMIT; i++) {
-    for (j = 0; j < LIMIT; j++) {
-      dst[j][i] = src[j][i];
+  for (j = 0; j < LIMIT; j++) {
+    for (i = 0; i < LIMIT; i++) {
+      dst[i][j] = src[i][j];
     }
   }
 
