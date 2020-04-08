@@ -82,7 +82,9 @@ The schedule is always tentative. I may shift topics around.
 |              | **Topics**: Threads, pthread library, Shared memory, Thread-safety, POSIX, Semaphores, Mutexes, Deadlock, Starvation, Livelock 
 |              | **Downloads**: [[mp4](https://video.449.wilkiepedia.org/videos/watch/40363571-4968-486c-8267-57cfe15b3ae9)] [[pdf]({{ site.baseurl }}/slides/15_CS449_Threads-and-Synchronization.pdf)] [[pptx]({{ site.baseurl }}/slides/15_CS449_Threads-and-Synchronization.pptx)] |
 | **W April      8 /<br> Th April    9** | **Sockets and Networking** |
-|              | |
+|              | {::nomarkdown}<iframe src="https://video.449.wilkiepedia.org/videos/embed/c2f55537-b31e-473a-8b89-78923ee7ec69" style="min-height: 400px; width: 100%;" frameborder="0" sandbox="allow-same-origin allow-scripts" allowfullscreen="allowfullscreen"></iframe>{:/} |
+|              | **Topics**: Sockets, IP Protocol, IP Addresses, TCP/UDP Protocols, DNS, Basic client-server topology, LAN/WAN Networks, Berkeley Socket Programming in C, HTTP Protocol, Web Servers |
+|              | **Downloads**: [[mp4](https://video.449.wilkiepedia.org/videos/watch/c2f55537-b31e-473a-8b89-78923ee7ec69)] [[pdf]({{ site.baseurl }}/slides/16-netprog.pdf)] [[pptx]({{ site.baseurl }}/slides/16-netprog.pptx)]<br><br>**Examples**: [[echoserver.c]({{site.baseurl}}/examples/sockets/echoserver.c)] [[echoclient.c]({{site.baseurl}}/examples/sockets/echoclient.c)]|
 | **M April     13 /<br> T April    14** | **Filesystems and Organization** |
 |              | |
 | **W April     15 /<br> Th April   16** | **Distributed Storage** |
