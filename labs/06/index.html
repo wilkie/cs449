@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Cache Lab | CS 449</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Cache Lab" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Weight: 10% of your total 50% Lab Grade" />
+<meta property="og:description" content="Weight: 10% of your total 50% Lab Grade" />
+<link rel="canonical" href="https://wilkie.github.io/cs449/labs/06/" />
+<meta property="og:url" content="https://wilkie.github.io/cs449/labs/06/" />
+<meta property="og:site_name" content="CS 449" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-04-10T15:04:31-04:00" />
+<script type="application/ld+json">
+{"datePublished":"2020-04-10T15:04:31-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://wilkie.github.io/cs449/labs/06/"},"description":"Weight: 10% of your total 50% Lab Grade","@type":"BlogPosting","url":"https://wilkie.github.io/cs449/labs/06/","headline":"Cache Lab","dateModified":"2020-04-10T15:04:31-04:00","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/cs449/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://wilkie.github.io/cs449/feed.xml" title="CS 449" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/cs449/">CS 449</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/cs449/about/">About</a><a class="page-link" href="/cs449/homework/">Homework</a><a class="page-link" href="/cs449/labs/">Labs</a><a class="page-link" href="/cs449/resources/">Resources</a><a class="page-link" href="/cs449/schedule/">Schedule</a><a class="page-link" href="/cs449/syllabus/">Syllabus</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        
+<h1>Cache Lab: Retrieving things, quickly</h1>
+
+<p>
+<strong>Released</strong>: 12:00 AM Monday, April 13th, 2020.
+</p>
+
+<p>
+<strong>Due</strong>: 11:59 PM Friday, April 24th, 2020.
+</p>
+
+<p>
+For this programming assignment, we will
+explore cache associativity by writing a simulator.
+
+</p>
+
+
+<p><strong>Weight</strong>: 10% of your total 50% Lab Grade</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Here, we will be looking at caches. To do this we will write a simulator in C
+that will implement a basic associative cache.</p>
+
+<p>If you recall from lecture, an associative cache is when you have a set of
+slots. To determine which slot data is cached within, you just hash the address
+used. There is one absolutely easy method that is often used, just use enough
+bits in the address to disambiguate.</p>
+
+<p>Let’s say, the cache holds blocks of 64 bytes of data each. In this case,
+6 bits would determine the offset within the cache block. That is, all addresses
+that share the remaining higher 26 bits are point to the same cache block.</p>
+
+<p>So, the next bits would reflect the cache slot! If we have 4 cache slots (4 sets)
+then 2 bits would suffice to determine which slot it falls into. That would be
+bits 6 and 7. (We start counting at bit 0, remember.)</p>
+
+<p>Why would we not use the highest bits? Well, because of locality! We want our
+cache to hold adjacent blocks. So we want to use the lowest bits possible to
+determine the cache set.</p>
+
+<p>These bits are called the “set index” and, again, every address that refers to
+the exact same block will have the same exact set index.</p>
+
+<p>The remaining bits are called the “cache tag” and this disambiguates the
+blocks that are in the cache. This comes into play later when we are dealing
+with associativity and eviction.</p>
+
+<p>Now, we want to consider
+how to determine which bin within the set the block will ultimately go.</p>
+
+<h2 id="associativity">Associativity</h2>
+
+<p>Recall from lecture that we can help our cache keep more blocks stored by
+involving associativity. In a direct-mapped cache, the slots all have only one
+bin. So, when we have two unique cache blocks that happen to both go to the
+same set (they have the same cache tag,) then they would conflict and one
+will “evict” the other.</p>
+
+<p>Lecture showed us that we can simply just add extra bins that content that would
+otherwise be evicted can just fall into the other bin. Eventually, we will fill
+every bin, of course, and then one would have to be evicted. The number of bins
+is referred to as the cache’s “associativity.”</p>
+
+<p>How do you know which bin a cache block goes into? Well, that’s completely up
+to you. It does not actually matter. When the cache is looking for a “hit,” it
+is forced to compare against every bin. That’s the trade-off… it’s flexible
+to have lots of bins but very impractical since it is slow to check for ‘hits’
+which defeats the whole purpose.</p>
+
+<h2 id="eviction">Eviction</h2>
+
+<p>How do you know which to evict? Well, there are many strategies. In this
+assignment, we will be implementing the LRU policy. In this scheme, you evict
+the item that was Least Recently Used.</p>
+
+<p>How do you keep track? You need some notion of “time” in order to keep track of
+which block has been least recently accessed. When you place the block into
+cache (on a cache miss!) then you set the time in your cache
+metadata for the block. When it is accessed again (hit) you update the time.
+Then when you evict, you scan the full set for the bin with the smallest time.</p>
+
+<p>It is probably easiest to “fake” the time. It only actually matters that one
+access has a higher time than the last. You do not have to actually store the
+wall clock time, just apply a monotonically increasing value to each access.</p>
+
+<h2 id="downloading">Downloading</h2>
+
+<p>To get the boilerplate code and the testing harness for this assignment, use the following
+command on thoth:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget https://wilkie.github.io/cs449/labs/06/cachelab-handout.zip
+</code></pre></div></div>
+
+<p>This will download the <code class="highlighter-rouge">cachelab-handout.zip</code> file to your (private) directory on the <code class="highlighter-rouge">thoth</code> Linux machine (make sure you are logged into this!) in which you will do your work.</p>
+
+<p>Then issue the command:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>unzip cachelab-handout.zip
+</code></pre></div></div>
+
+<p>This will cause a number of files to be unpacked in the directory <code class="highlighter-rouge">cachelab-handout</code>.
+Navigate to that directory and look at the files.
+The file you will be modifying is <code class="highlighter-rouge">csim.c</code>.
+The <code class="highlighter-rouge">csim.c</code> file contains a skeleton for the functions that you will implement to fulfill the needs of the cache simulator.</p>
+
+<p>Consult the <code class="highlighter-rouge">README</code> file for a more thorough description of the files and how to use them.</p>
+
+<h2 id="usage">Usage</h2>
+
+<p>Included in the handout package is the <code class="highlighter-rouge">csim-ref</code> program that implements the
+proper solution that you can change yours against.</p>
+
+<p>Both your simulator and <code class="highlighter-rouge">csim-ref</code> will interpret <code class="highlighter-rouge">valgrind</code> memory traces.
+The traces are located in the <code class="highlighter-rouge">traces</code> directory and were created by a Linux
+program as such:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>thoth $ valgrind --log-fd=1 --tool=lackey -v --trace-mem=yes ls -l
+</code></pre></div></div>
+
+<p>Which will trace the memory usage of the <code class="highlighter-rouge">ls</code> command and toss out the memory
+accesses to the terminal (<code class="highlighter-rouge">stdout</code>).</p>
+
+<p>Here is an example trace:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I  004005b6,5
+ L 7ff000384,4
+ S 7ff000388,4
+ S 7ff00038c,4
+ L 7ff000388,4
+</code></pre></div></div>
+
+<p>Each line is of the form:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[space]operation address,size
+</code></pre></div></div>
+
+<p>Where <code class="highlighter-rouge">[space]</code> is a literal space, as seen above, and operation denotes the
+type of access. <code class="highlighter-rouge">I</code> denotes an instruction load (note, no space in front),
+<code class="highlighter-rouge">L</code> is a data load, <code class="highlighter-rouge">S</code> is a data store, and <code class="highlighter-rouge">M</code> is a data modification
+(which is shorthand for a load followed by store to the same address.)</p>
+
+<p>The <code class="highlighter-rouge">address</code> field denotes a 64-bit memory address in hexadecimal form. This
+is followed by <code class="highlighter-rouge">size</code>, a decimal (base 10) value indicating how many bytes are
+stored. For our purposes, all accesses are word-aligned, so the size will never
+matter and can be ignored.</p>
+
+<p>You can run your simulator (or <code class="highlighter-rouge">csim-ref</code>) with the following command:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>thoth $ ./csim -t traces/dave.trace -s 8 -E 4 -b 64
+</code></pre></div></div>
+
+<p>This runs the simulator for a cache that has 8 sets and is 4-way associative
+storing blocks that are 64 bytes. It is running the <code class="highlighter-rouge">dave.trace</code> trace file.</p>
+
+<p>It will report the number of evictions, misses, and hits.</p>
+
+<h2 id="implementation">Implementation</h2>
+
+<p>You have to implement only three functions. I have nicely provided the trace
+reading function for you in <code class="highlighter-rouge">replayTrace</code>.</p>
+
+<p>You will implement your own cache data structure. You’ll need a structure
+for each cache set and then for each cache block (referred to as a cache line.)</p>
+
+<p>Then you will implement a function to allocate the cache data structure in
+<code class="highlighter-rouge">initCache</code>. You can simply allocate the entire cache before hand, if you’d like.</p>
+
+<p>Then you will also implement a function to free the cache data structure in
+<code class="highlighter-rouge">freeCache</code>.</p>
+
+<p>The <code class="highlighter-rouge">accessData</code> function is the main hunk of beef for this assignment. Here,
+you are passed an address (an integer representing the location in memory you
+are accessing.) You will interpret that address and determine the index of the
+set (slot) and also the cache tag (to compare against the bins.)</p>
+
+<p>Your <code class="highlighter-rouge">accessData</code> needs to update global variables <code class="highlighter-rouge">hit_count</code>, <code class="highlighter-rouge">miss_count</code>
+and <code class="highlighter-rouge">eviction_count</code> whenever any of these events occurs.</p>
+
+<p>There are a few helpful global variables that are initialized with the cache
+size requested.</p>
+
+<p><code class="highlighter-rouge">S</code> holds the number of sets to use for the cache.
+<code class="highlighter-rouge">E</code> holds the associativity of the cache.
+<code class="highlighter-rouge">B</code> holds the block size in bytes.</p>
+
+<p><code class="highlighter-rouge">b</code> holds the number of bits that represent the block offset.
+<code class="highlighter-rouge">s</code> holds the number of bits that represent the cache set.</p>
+
+<p><img src="/cs449/labs/06/cache-layout.png" alt="The cache layout showing how bits are used to determine the cache set and bin." /></p>
+
+<p>So, with these… how do you pull out the cache set from the address?
+How do you pull out the cache tag?</p>
+
+<p>So, don’t overthink this. My implementation of <code class="highlighter-rouge">accessData</code> is 60 lines.
+My <code class="highlighter-rouge">initCache</code> and <code class="highlighter-rouge">freeCache</code> are just 4 lines each.</p>
+
+<h2 id="evaluation">Evaluation</h2>
+
+<p>You will be evaluated on a set of traces and combinations of cache sizes that
+are randomly generated. To run a set of static evaluations locally, you can use
+the <code class="highlighter-rouge">driver.py</code> script:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>thoth $ python ./driver.py
+</code></pre></div></div>
+
+<p>It will give you a local score that should highly reflect your potential score
+once you submit to the grader. Make sure you also test different values against
+the reference simulator. The grader will report the command line arguments
+passed to your program that did not match the reference simulator upon failure
+so you can debug and resubmit.</p>
+
+<h2 id="submission">Submission</h2>
+
+<p>You only need to upload a single file <code class="highlighter-rouge">csim.c</code> to Gradescope for this assignment.
+You may submit as many times as you like until the due date.</p>
+
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/cs449/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">CS 449</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">CS 449</li><li><a class="u-email" href="mailto:dwilk@cs.pitt.edu">dwilk@cs.pitt.edu</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/wilkie"><svg class="svg-icon"><use xlink:href="/cs449/assets/minima-social-icons.svg#github"></use></svg> <span class="username">wilkie</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>CS 449 (26790) / COE (22632) / CS 449 (26745);
+MW 3:00PM
+324 Cathedral of Learning
+TTh 1:00PM
+125 Frick Fine Arts
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
