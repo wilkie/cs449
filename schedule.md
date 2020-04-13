@@ -85,8 +85,10 @@ The schedule is always tentative. I may shift topics around.
 |              | {::nomarkdown}<iframe src="https://video.449.wilkiepedia.org/videos/embed/c2f55537-b31e-473a-8b89-78923ee7ec69" style="min-height: 400px; width: 100%;" frameborder="0" sandbox="allow-same-origin allow-scripts" allowfullscreen="allowfullscreen"></iframe>{:/} |
 |              | **Topics**: Sockets, IP Protocol, IP Addresses, TCP/UDP Protocols, DNS, Basic client-server topology, LAN/WAN Networks, Berkeley Socket Programming in C, HTTP Protocol, Web Servers |
 |              | **Downloads**: [[mp4](https://video.449.wilkiepedia.org/videos/watch/c2f55537-b31e-473a-8b89-78923ee7ec69)] [[pdf]({{ site.baseurl }}/slides/16-netprog.pdf)] [[pptx]({{ site.baseurl }}/slides/16-netprog.pptx)]<br><br>**Examples**: [[echoserver.c]({{site.baseurl}}/examples/sockets/echoserver.c)] [[echoclient.c]({{site.baseurl}}/examples/sockets/echoclient.c)]|
-| **M April     13 /<br> T April    14** | **Filesystems and Organization** |
-|              | |
+| **M April     13 /<br> T April    14** | **Files and Directories** |
+|              | {::nomarkdown}<!--<iframe src="https://video.449.wilkiepedia.org/videos/embed/c2f55537-b31e-473a-8b89-78923ee7ec69" style="min-height: 400px; width: 100%;" frameborder="0" sandbox="allow-same-origin allow-scripts" allowfullscreen="allowfullscreen"></iframe>-->{:/} |
+|              | **Topics**: Files and data, File formats, Disk organization, Disk encoding, File systems, Index nodes and file layout, Directories, Hierarchical vs. non-hierarchical storage |
+|              | **Downloads**: [mp4 - TBA] [[pdf]({{ site.baseurl }}/slides/17_CS449_Files-and-Directories.pdf)] [[pptx]({{ site.baseurl }}/slides/17_CS449_Files-and-Directories.pptx)]<br><br>**Examples**: [[files.c]({{site.baseurl}}/examples/files/files.c)] [[files_unix.c]({{site.baseurl}}/examples/files/files_unix.c)]|
 | **W April     15 /<br> Th April   16** | **Distributed Storage** |
 |              | |
 | **Th April 23**  | **8AM FINAL CL324** for Monday/Wednesday Section (CS 26790) - **TO BE REPLACED WITH TAKE-HOME FINAL** |
@@ -125,6 +127,8 @@ The schedule is always tentative. I may shift topics around.
 **Virtual Office**: <https://pitt.zoom.us/j/4951906131>
 
 ### Zack Hable
+
+**Also valid Finals Week**
 
 **Tuesday**: 1:00PM - 3:00PM
 
