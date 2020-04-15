@@ -185,11 +185,12 @@ matter and can be ignored.</p>
 
 <p>You can run your simulator (or <code class="highlighter-rouge">csim-ref</code>) with the following command:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>thoth $ ./csim -t traces/dave.trace -s 8 -E 4 -b 64
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>thoth $ ./csim -t traces/dave.trace -s 8 -E 4 -b 12
 </code></pre></div></div>
 
-<p>This runs the simulator for a cache that has 8 sets and is 4-way associative
-storing blocks that are 64 bytes. It is running the <code class="highlighter-rouge">dave.trace</code> trace file.</p>
+<p>This runs the simulator for a cache that uses 8 set index bits and 12 offset
+bits and is 4-way associative. It is running the <code class="highlighter-rouge">dave.trace</code> trace file.
+Here, there are 256 sets and 4KiB blocks (<code class="highlighter-rouge">S</code> and <code class="highlighter-rouge">B</code> respectively).</p>
 
 <p>It will report the number of evictions, misses, and hits.</p>
 
