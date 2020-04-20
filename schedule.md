@@ -102,7 +102,11 @@ The schedule is always tentative. I may shift topics around.
 
 ### Gordon Lu
 
+**TBA**
+
+<!--
 **Friday**: 2:00PM - 3:00PM, 4:00PM - 6:00PM
+-->
 
 **E-Mail**: gol6@pitt.edu
 
@@ -110,9 +114,13 @@ The schedule is always tentative. I may shift topics around.
 
 ### Alex Conway
 
+**TBA**
+
+<!--
 **Wednesday**: 10:00AM - 12:00PM
 
 **Friday**: 12:00PM - 1:00PM
+-->
 
 **E-Mail**: lac216@pitt.edu
 
@@ -120,9 +128,11 @@ The schedule is always tentative. I may shift topics around.
 
 ### Jon Rutkauskas
 
-**Tuesday**: 10:00AM - 11:30AM
+**Finals Week Hours**:
 
-**Thursday**: 12:00PM - 1:30PM
+**Wednesday**: 12:00PM - 2:00PM
+
+**Thursday**: 12:00PM - 2:00PM
 
 **E-Mail**: jsr68@pitt.edu
 
@@ -130,7 +140,7 @@ The schedule is always tentative. I may shift topics around.
 
 ### Zack Hable
 
-**Also valid Finals Week**
+**Finals Week Hours**:
 
 **Tuesday**: 1:00PM - 3:00PM
 
